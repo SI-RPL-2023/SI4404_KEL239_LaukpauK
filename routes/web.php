@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,8 @@ Route::post('/logout', [UserController::class, 'logoutUser']);
 
 Route::prefix('/admin')->group(function () {
     Route::get('/', [AdminController::class, 'dashboardView'])->name('dashboard');
+    Route::get('/listProduct', [AdminController::class, 'showProducts'])->name('listProduct');
+    Route::get('/addProduct', [AdminController::class, 'addProductView'])->name('addProduct');
+    Route::post('/saveProduct', [ProductController::class, 'saveProduct'])->name('saveProduct');
+    Route::delete('/deleteProduct/{id}', [ProductController::class, 'deleteProduct'])->name('deleteProduct');
 });
