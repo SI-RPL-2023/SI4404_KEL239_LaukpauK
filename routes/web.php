@@ -32,6 +32,8 @@ Route::prefix('/admin')->group(function () {
     Route::get('/listProduct', [AdminController::class, 'showProducts'])->middleware('auth')->name('listProduct');
     Route::get('/addProduct', [AdminController::class, 'addProductView'])->middleware('auth')->name('addProduct');
     Route::post('/saveProduct', [ProductController::class, 'saveProduct'])->middleware('auth')->name('saveProduct');
+    Route::get('/editProduct/{id}', [AdminController::class, 'editProductView'])->middleware('auth')->name('editProduct');
+    Route::post('/updateProduct/{id}', [ProductController::class, 'updateProduct'])->middleware('auth')->name('updateProduct');
     Route::delete('/deleteProduct/{id}', [ProductController::class, 'deleteProduct'])->middleware('auth')->name('deleteProduct');
     Route::get('/', [AdminController::class, 'dashboardView'])->name('dashboard')->middleware('auth');
 });

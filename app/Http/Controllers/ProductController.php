@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -37,8 +38,31 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         // Storage::disk('public')->delete($product->image);
+        File::delete('storage/'.$product->gambar_produk);
         $product->delete();
         
-        return redirect()->back()->with('deleteSuccess', 'Produk berhasil dihapus');
+        return redirect()->back()->with('deleteSuccess', 'Produk berhasil dihapus!');
+    }
+
+    public function updateProduct(Request $request) {
+        $id = $request->id;
+        $product = Product::find($id);
+        File::delete('storage/'.$product->gambar_produk);
+
+        if ($request->hasFile('gambar_produk')) {
+            $extension = $request->file('gambar_produk')->getClientOriginalExtension();
+            $new_name = $request->nama_produk . '-' . now()->format('Y-m-d') . '.' . $extension;
+            $img = $request->file('gambar_produk')->storeAs('fotoProduk', $new_name);
+            $product->gambar_produk = $img;
+        }
+
+        $product->nama_produk = $request->nama_produk;
+        $product->harga = $request->harga;
+        $product->stock = $request->stock;
+        $product->deskripsi = $request->deskripsi;
+        $product->kategori = $request->kategori;
+
+        $product->save();
+        return redirect('/admin/listProduct')->with('updateSuccess', 'Produk Berhasil Diubah!');
     }
 }

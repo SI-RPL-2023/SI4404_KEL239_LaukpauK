@@ -44,6 +44,13 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
+
+                @if (session()->has('updateSuccess'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('updateSuccess') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
                 
                 <button class="btn btn-primary" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 143.037px;">
                     <a class="text-center link-warning" href="{{ route('addProduct') }}">
@@ -73,14 +80,14 @@
                                             <td class="text-dark" style="text-align: center;">{{ $product->id }}</td>
                                             <td class="text-dark" style="text-align: center;">{{ $product->nama_produk }}<br></td>
                                             <td style="text-align: center;">
-                                                <picture><img style="text-align: center;width: 133px;" width="116" height="96" src="{{ asset('assets/admin/images/images.jpeg') }}"></picture>
+                                                <picture><img style="text-align: center;width: 133px;" width="116" height="96" src="{{ asset('storage/'.$product->gambar_produk) }}"></picture>
                                             </td>
                                             <td class="text-dark" style="text-align: center;">{{ 'Rp.'.$product->harga }}</td>
                                             <td class="text-dark" style="text-align: center;">{{ $product->stock }}</td>
                                             <td style="text-align: center;">
-                                                <button class="btn btn-primary" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 112.3312px;">
+                                                <a class="btn btn-primary" style="background: #e7b10a;margin-bottom: 12px;width: 112.3312px;" href="{{ url('/admin/editProduct/'.$product->id) }}">
                                                     <strong>Edit</strong>
-                                                </button>
+                                                </a>
                                                 <form action="{{ url('/admin/deleteProduct/'.$product->id) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')

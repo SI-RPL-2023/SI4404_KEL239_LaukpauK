@@ -20,4 +20,11 @@ class AdminController extends Controller
     public function addProductView() {
         return view('admin/addProduct');
     }
+
+    public function editProductView(Request $request) {
+        $id = $request->id;
+        $product = Product::find($id);
+
+        return view('admin/editProduct', compact('product'));
+    }
 }
