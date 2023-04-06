@@ -99,148 +99,68 @@
   </div>
 
   <!--CUSTOMER-->
-      <div class="row justify-content-center text-center mb-">
-          <div class="col-md-8">
-              <center><h4 class="mb-3">Our Customer</h4></center>
-          </div>
-      </div>
-      <div class="row justify-content-center text-center">
-          <div class="col-md-7">
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="review text-center">
-                    <p class="stars">
-                      <span class="bi bi-star-fill"></span>
-                      <span class="bi bi-star-fill"></span>
-                      <span class="bi bi-star-fill"></span>
-                      <span class="bi bi-star-fill"></span>
-                      <span class="bi bi-star-fill muted"></span>
-                    </p>
-                    <h3>So Helpful!</h3>
-                    <blockquote>
-                      <p>Lorem ipsum dolor sit amet consectetur. 
-                          Condimentum lacinia pulvinar morbi urna adipiscing id quis dolor. 
-                          Euismod lacinia hendrerit sed diam aliquam ac. 
-                          Id cum id nulla nulla laoreet in pellentesque.</p>
-                    </blockquote>
-                    <p class="review-user">
-                      <img src="{{ asset('assets/user/images/landingPage/person_1.jpg') }}" alt="Image" class="img-fluid rounded-circle mb-3">
-                      <span class="d-block">
-                        <span class="text-black">Suriyanti</span>
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="review text-center">
-                    <p class="stars">
-                      <span class="bi bi-star-fill"></span>
-                      <span class="bi bi-star-fill"></span>
-                      <span class="bi bi-star-fill"></span>
-                      <span class="bi bi-star-fill"></span>
-                      <span class="bi bi-star-fill muted"></span>
-                    </p>
-                    <h3>Always be my go-to shopping site!</h3>
-                    <blockquote>
-                      <p>Lorem ipsum dolor sit amet consectetur. Condimentum lacinia pulvinar morbi urna adipiscing id quis dolor.
-                          Euismod lacinia hendrerit sed diam aliquam ac.
-                          Id cum id nulla nulla laoreet in pellentesque.</p>
-                    </blockquote>
-                    <p class="review-user">
-                      <img src="{{ asset('assets/user/images/landingPage/person_2.jpg') }}" alt="Image" class="img-fluid rounded-circle mb-3">
-                      <span class="d-block">
-                        <span class="text-black">Hamid Rahman</span>
-                      </span>
-                    </p>
-                  </div>
+    <div class="row justify-content-center text-center mb-">
+        <div class="col-md-8">
+            <center><h4 class="mb-3">Our Customer</h4></center>
+        </div>
+    </div>
+    <div class="row justify-content-center text-center">
+        <div class="col-md-7">
+          <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="review text-center">
+                  <p class="stars">
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill muted"></span>
+                  </p>
+                  <h3>So Helpful!</h3>
+                  <blockquote>
+                    <p>Lorem ipsum dolor sit amet consectetur. 
+                        Condimentum lacinia pulvinar morbi urna adipiscing id quis dolor. 
+                        Euismod lacinia hendrerit sed diam aliquam ac. 
+                        Id cum id nulla nulla laoreet in pellentesque.</p>
+                  </blockquote>
+                  <p class="review-user">
+                    <img src="{{ asset('assets/user/images/landingPage/person_1.jpg') }}" alt="Image" class="img-fluid rounded-circle mb-3">
+                    <span class="d-block">
+                      <span class="text-black">Suriyanti</span>
+                    </span>
+                  </p>
                 </div>
               </div>
-              <div class="swiper-pagination"></div>
+              <div class="swiper-slide">
+                <div class="review text-center">
+                  <p class="stars">
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill"></span>
+                    <span class="bi bi-star-fill muted"></span>
+                  </p>
+                  <h3>Always be my go-to shopping site!</h3>
+                  <blockquote>
+                    <p>Lorem ipsum dolor sit amet consectetur. Condimentum lacinia pulvinar morbi urna adipiscing id quis dolor.
+                        Euismod lacinia hendrerit sed diam aliquam ac.
+                        Id cum id nulla nulla laoreet in pellentesque.</p>
+                  </blockquote>
+                  <p class="review-user">
+                    <img src="{{ asset('assets/user/images/landingPage/person_2.jpg') }}" alt="Image" class="img-fluid rounded-circle mb-3">
+                    <span class="d-block">
+                      <span class="text-black">Hamid Rahman</span>
+                    </span>
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-
-  <!--JUMBOTRON-->
-  <section>
-    <div class="col-md-12">
-      <div class="h-100 p-5 jumbo">
-        <div class="row">
-          <div class="col-sm-8 mt-3">
-              <h3><strong>About Us</strong></h3>
-              <br><p class="jumbo-text">Aplikasi berbasis website yang bernama “LaukpauK” yang dapat digunakan membantu masyarakat indonesia terutama daerah bandung 
-                  untuk mendapatkan lauk pauk 4 sehat 5 sempurna yang siap untuk dimasak, memberikan artikel edukasi mengenai masakan 4 sehat 5 sempurna, 
-                  memberikan resep makanan 4 sehat 5 sempurna yang dapat dimasak ibu rumah tangga.</p><br>
-            <button type="button" class="btn btn-modal" data-bs-toggle="modal" data-bs-target="#Modal1">
-            Learn More
-            </button>
-          </div>
-          <div class="col-sm-4" align=""right>
-            <h3><strong>Find Us On</strong></h3>
-            <table class="table table-borderless">
-                <tr>
-                  <td>
-                    <a class="me-3" href="https://www.instagram.com/"><img src="{{ asset('assets/user/images/landingPage/ig.png') }}" width="30" alt=""></a>
-                    <a class="me-3" href="https://id-id.facebook.com/"><img src="{{ asset('assets/user/images/landingPage/fb.png') }}" width="30" alt=""></a>
-                    <a class="me-3" href="https://twitter.com/i/flow/login"><img src="{{ asset('assets/user/images/landingPage/twt.png') }}" width="30" alt=""></a>
-                  </td>
-                  <td>
-                    <img src="" width="60" alt="">
-                  </td>
-                  <td>
-                    <img src="" width="60" alt="">
-                  </td>
-                </tr>
-            </table>
-            <h3><strong>Contact Us</strong></h3>
-            <table>
-              <tr>
-                <td>
-                  <img class="me-3 pb-2" src="{{ asset('assets/user/images/landingPage/mail.png') }}" width="20">
-                </td>
-                <td>
-                  <p class="jumbo-text">support-laukpauk@gmail.com</p>
-                </td>
-              </tr>
-            </table>
-            <table>
-              <tr>
-                <td>
-                  <img class="me-3 pb-3" src="{{ asset('assets/user/images/landingPage/wa.png') }}" width="20">
-                </td>
-                <td>
-                  <p class="jumbo-text">+1 1221 3443</p>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>     
-      </div>
-    </div>
-  </section>
-
-  <!-- MODAL -->
-  <section>
-    <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="ModalLongTitle">More about us</h5>
-          </div>
-          <div class="modal-body">
-              Aplikasi berbasis website yang bernama “LaukpauK” yang dapat digunakan membantu masyarakat indonesia terutama daerah bandung untuk 
-              mendapatkan lauk pauk 4 sehat 5 sempurna yang siap untuk dimasak, memberikan artikel edukasi mengenai masakan 4 sehat 5 sempurna,
-              memberikan resep makanan 4 sehat 5 sempurna yang dapat dimasak ibu rumah tangga.
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
   <!--FOOTER-->
-  <footer class="text-center text-lg-start jumbo-text">
-    <div class="text-center pt-3">
-      ©2023. All rights reserved
-    </div>
-  </footer>
+  @include('layouts/footer')
 @endsection

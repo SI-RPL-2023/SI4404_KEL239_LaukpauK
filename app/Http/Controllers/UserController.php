@@ -11,11 +11,13 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    public function registerView() {
+    public function registerView()
+    {
         return view('user/Register');
     }
 
-    public function registerUser(Request $request) {
+    public function registerUser(Request $request)
+    {
         $validatedData = $request->validate(
             [
                 'nama_lengkap' => 'required',
@@ -35,7 +37,7 @@ class UserController extends Controller
 
         $validatedData['password'] = Hash::make($validatedData['password']);
 
-        if($request->hasFile('foto_user')) {
+        if ($request->hasFile('foto_user')) {
             $extension = $request->file('foto_user')->getClientOriginalExtension();
             $new_name = $request->nama_lengkap . '-' . now()->format('Y-m-d') . '.' . $extension;
             $img = $request->file('foto_user')->storeAs('fotoProfileUser', $new_name);
@@ -47,11 +49,13 @@ class UserController extends Controller
         return redirect('/login')->with('registerSuccess', 'Registrasi Berhasil!');
     }
 
-    function loginView() {
+    function loginView()
+    {
         return view('user/Login');
     }
 
-    public function loginUser(Request $request) {
+    public function loginUser(Request $request)
+    {
         $credentials = $request->validate([
             'email' => 'required|email:rfc,dns',
             'password' => 'required|min:8',
@@ -60,7 +64,7 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            if(auth()->user()->role === 'user') {
+            if (auth()->user()->role === 'user') {
                 return redirect()->intended('/');
             }
 
@@ -70,17 +74,24 @@ class UserController extends Controller
         return back()->with('loginError', 'Login gagal!');
     }
 
-    public function logoutUser(Request $request) {
+    public function logoutUser(Request $request)
+    {
         Auth::logout();
- 
+
         $request->session()->invalidate();
-    
+
         $request->session()->regenerateToken();
-    
+
         return redirect('/login')->with('logoutSuccess', 'Logout Berhasil!');
     }
 
-    public function landingPageView() {
+    public function landingPageView()
+    {
         return view('user/LandingPage');
-    } 
+    }
+
+    public function contactUsView()
+    {
+        return view('user/contactUs');
+    }
 }

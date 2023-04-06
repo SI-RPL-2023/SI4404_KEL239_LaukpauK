@@ -28,6 +28,9 @@ Route::post('/register', [UserController::class, 'registerUser']);
 // LOGOUT
 Route::post('/logout', [UserController::class, 'logoutUser'])->name('logout');
 
+// CONTACT US
+Route::get('/contactUs', [UserController::class, 'contactUsView'])->name('contactUs');
+
 // LANDING PAGE
 Route::get('/', [UserController::class, 'landingPageView']);
 
@@ -35,18 +38,18 @@ Route::get('/', [UserController::class, 'landingPageView']);
 Route::prefix('/admin')->group(function () {
     // LIST PRODUCTS
     Route::get('/listProduct', [AdminController::class, 'showProducts'])->middleware('auth')->name('listProduct');
-    
+
     // ADD PRODUCT
     Route::get('/addProduct', [AdminController::class, 'addProductView'])->middleware('auth')->name('addProduct');
     Route::post('/saveProduct', [ProductController::class, 'saveProduct'])->middleware('auth')->name('saveProduct');
-    
+
     // UPDATE PRODUCT
     Route::get('/editProduct/{id}', [AdminController::class, 'editProductView'])->middleware('auth')->name('editProduct');
     Route::post('/updateProduct/{id}', [ProductController::class, 'updateProduct'])->middleware('auth')->name('updateProduct');
-    
+
     // DELETE PRODUCT
     Route::delete('/deleteProduct/{id}', [ProductController::class, 'deleteProduct'])->middleware('auth')->name('deleteProduct');
-    
+
     // DASHBOARD
     Route::get('/', [AdminController::class, 'dashboardView'])->name('dashboard')->middleware('auth');
 });
