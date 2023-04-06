@@ -15,17 +15,21 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto mx-lg-auto py-0">
                     <a href="" class="nav-item nav-link active"><b>Home</b></a>
-                    <a href="" class="nav-item nav-link"><b>Products</b></a>
-                    <a href="" class="nav-item nav-link"><b>Articles</b></a>
-                    <a href="" class="nav-item nav-link"><b>Recipe</b></a>
-                    <a href="" class="nav-item nav-link"><b>Contact</b></a>
-                    <a href="" class="nav-item nav-link"><b>Order</b></a>
+                    @auth
+                        <a href="" class="nav-item nav-link"><b>Articles</b></a>
+                        <a href="" class="nav-item nav-link"><b>Recipe</b></a>
+                        @endauth
+                        <a href="" class="nav-item nav-link"><b>Products</b></a>
+                        <a href="" class="nav-item nav-link"><b>Contact</b></a>
+                    @auth
+                        <a href="" class="nav-item nav-link"><b>Orders</b></a>
+                    @endauth
                 </div>
             </div>
         </div>
         <div class="col-4 d-flex justify-content-center">
             @auth
-              <div class="col-4">
+            <div class="col-4">
                   <div class="nav-item dropdown">
                       <a class="navbar-brand" href="">
                           <img src="{{ asset('assets/user/images/landingPage/cart.png') }}" alt="Bootstrap" width="" height="25">

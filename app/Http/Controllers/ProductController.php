@@ -47,8 +47,7 @@ class ProductController extends Controller
     public function updateProduct(Request $request) {
         $id = $request->id;
         $product = Product::find($id);
-        File::delete('storage/'.$product->gambar_produk);
-
+        
         if ($request->hasFile('gambar_produk')) {
             $extension = $request->file('gambar_produk')->getClientOriginalExtension();
             $new_name = $request->nama_produk . '-' . now()->format('Y-m-d') . '.' . $extension;
@@ -56,13 +55,15 @@ class ProductController extends Controller
             $product->gambar_produk = $img;
         }
 
+        
         $product->nama_produk = $request->nama_produk;
         $product->harga = $request->harga;
         $product->stock = $request->stock;
         $product->deskripsi = $request->deskripsi;
         $product->kategori = $request->kategori;
-
+        
         $product->save();
         return redirect('/admin/listProduct')->with('updateSuccess', 'Produk Berhasil Diubah!');
+        File::delete('storage/'.$product->gambar_produk);
     }
 }

@@ -22,13 +22,14 @@ class UserController extends Controller
                 'email' => 'required|email:rfc,dns|unique:users',
                 'nohp' => 'required|min:11|max:13|unique:users',
                 'alamat' => 'required',
-                'password' => 'required|min:5|max:8|confirmed',
+                'password' => 'required|min:8|confirmed',
             ],
             [
                 'nohp.required' => 'The Phone Number Field is Required',
                 'alamat.required' => 'The Address Field is Required',
                 'nohp.min' => 'The Phone Number field must not be less than 11 characters.',
                 'nohp.max' => 'The Phone Number field must not be greater than 13 characters.',
+                'nohp.required' => 'The Phone Number has already been taken.',
             ]
         );
 
@@ -53,7 +54,7 @@ class UserController extends Controller
     public function loginUser(Request $request) {
         $credentials = $request->validate([
             'email' => 'required|email:rfc,dns',
-            'password' => 'required|min:5|max:8',
+            'password' => 'required|min:8',
         ]);
 
         if (Auth::attempt($credentials)) {

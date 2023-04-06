@@ -30,7 +30,7 @@
                     <span style="font-weight: bold;">List Resep</span>
                 </a>
                 <a class="nav-link text-center link-warning" href="profile.html">
-                    <i class="fas fa-user text-warning"></i>
+                    <i class="fas fa-table text-warning"></i>
                     <span style="font-weight: bold;">List Order</span>
                 </a>
             </li>
@@ -38,7 +38,6 @@
             <li class="nav-item"></li>
         </ul>
         <button class="btn rounded-circle border-0" id="sidebarToggle" type="button">
-            <i class="bi bi-chevron-left"></i>
         </button>
     </div>
 </nav>
