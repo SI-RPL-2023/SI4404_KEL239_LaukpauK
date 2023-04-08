@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\testSendEmail;
 
 class UserController extends Controller
 {
@@ -90,8 +92,31 @@ class UserController extends Controller
         return view('user/LandingPage');
     }
 
-    public function contactUsView()
+    public function contactUsView(Request $request)
     {
         return view('user/contactUs');
+    }
+
+    public function sendEmail(Request $request)
+    {
+        // $subject = $request->subject;
+        // $email = $request->email;
+        // $isi_pesan = $request->isi_pesan;
+
+        $data_email = [
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'isi_pesan' => $request->isi_pesan,
+            'name' => $request->name
+        ];
+
+        Mail::to('wakhidyusuf75@gmail.com')->send(new testSendEmail($data_email));
+        // Mail::send('user/contactUs', $data_email, function ($message) use ($data_email) {
+        //     $message->to('wakhidyusuf75@gmail.com')
+        //         ->subject($data_email['subject'])
+        //         ->from($data_email['email']);
+        // });
+        // return view('user/contactUs');
+        return redirect('/contactUs')->with('sendEmailSuccess', 'Pesan Berhasil Dikirim!');
     }
 }

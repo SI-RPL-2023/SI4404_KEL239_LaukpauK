@@ -30,6 +30,7 @@ Route::post('/logout', [UserController::class, 'logoutUser'])->name('logout');
 
 // CONTACT US
 Route::get('/contactUs', [UserController::class, 'contactUsView'])->name('contactUs');
+Route::post('/sendEmail', [UserController::class, 'sendEmail'])->name('send.email');
 
 // LANDING PAGE
 Route::get('/', [UserController::class, 'landingPageView']);
