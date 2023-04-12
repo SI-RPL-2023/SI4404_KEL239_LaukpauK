@@ -16,13 +16,13 @@
                 <div class="navbar-nav ms-auto mx-lg-auto py-0">
                     <a href="{{ url('/') }}" class="nav-item nav-link active"><b>Home</b></a>
                     @auth
-                    <a href="" class="nav-item nav-link"><b>Articles</b></a>
-                    <a href="" class="nav-item nav-link"><b>Recipe</b></a>
+                        <a href="" class="nav-item nav-link"><b>Articles</b></a>
+                        <a href="" class="nav-item nav-link"><b>Recipe</b></a>
                     @endauth
-                    <a href="" class="nav-item nav-link"><b>Products</b></a>
+                    <a href="{{ url('listProduct') }}" class="nav-item nav-link"><b>Products</b></a>
                     <a href="{{ url('contactUs') }}" class="nav-item nav-link"><b>Contact</b></a>
                     @auth
-                    <a href="" class="nav-item nav-link"><b>Orders</b></a>
+                        <a href="" class="nav-item nav-link"><b>Orders</b></a>
                     @endauth
                 </div>
             </div>

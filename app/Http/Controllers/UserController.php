@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\testSendEmail;
+use App\Models\Product;
 
 class UserController extends Controller
 {
@@ -118,5 +119,11 @@ class UserController extends Controller
         // });
         // return view('user/contactUs');
         return redirect('/contactUs')->with('sendEmailSuccess', 'Pesan Berhasil Dikirim!');
+    }
+
+    public function listProductView() {
+        $products = Product::all();
+
+        return view('user/listProduct', compact('products'));
     }
 }
