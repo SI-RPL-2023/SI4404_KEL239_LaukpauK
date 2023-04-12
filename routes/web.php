@@ -54,3 +54,7 @@ Route::prefix('/admin')->group(function () {
     // DASHBOARD
     Route::get('/', [AdminController::class, 'dashboardView'])->name('dashboard')->middleware('auth');
 });
+
+Route::get('list', function () {
+    return view('listproduk');
+});
