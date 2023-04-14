@@ -29,78 +29,9 @@
             </div>
         </div>
 
-        <!-- Featured Product -->
-        <div class="container-fluid">
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="text-center" style="color:#E7B10A;">Featured Product</h1>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 25px;">
-                    <div class="col-3">
-                        <div class="card">
-                            <img src="{{ asset('assets/user/images/listProduct/dummy.png') }}" class="card-img-top center" style="margin:10px 10px 0px 10px;width: auto;height: 228px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Jasa Masak</h5>
-                                <p class="card-text">Langsung dimasak tanpa ribet!</p>
-                                <p class="card-text">Stock: 20</p>
-                                <h5 class="card-harga text-center">Rp5.000</h5>
-                                <div class="text-center" style="margin-top:10px;">
-                                    <a href="#" class="btn btn-detail btn-warning btn-lg" style="color: white;font-weight: 600;">Detail</a>
-                                </div>     
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card">
-                            <img src="{{ asset('assets/user/images/listProduct/dummy.png') }}" class="card-img-top center" style="margin:10px 10px 0px 10px;width: auto;height: 228px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Paket Sayur Sop</h5>
-                                <p class="card-text">Isi A, Isi B, Isi C</p>
-                                <p class="card-text">Stock: 20</p>
-                                <h5 class="card-harga text-center">Rp13.500</h5>
-                                <div class="text-center" style="margin-top:10px;">
-                                    <a href="#" class="btn btn-detail btn-warning btn-lg" style="color: white;font-weight: 600;">Detail</a>
-                                </div>     
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card">
-                            <img src="{{ asset('assets/user/images/listProduct/dummy.png') }}" class="card-img-top center" style="margin:10px 10px 0px 10px;width: auto;height: 228px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Paket Sayur Sop</h5>
-                                <p class="card-text">Isi A, Isi B, Isi C</p>
-                                <p class="card-text">Stock: 20</p>
-                                <h5 class="card-harga text-center">Rp13.500</h5>
-                                <div class="text-center" style="margin-top:10px;">
-                                    <a href="#" class="btn btn-detail btn-warning btn-lg" style="color: white;font-weight: 600;">Detail</a>
-                                </div>     
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="card">
-                            <img src="{{ asset('assets/user/images/listProduct/dummy.png') }}" class="card-img-top center" style="margin:10px 10px 0px 10px;width: auto;height: 228px;">
-                            <div class="card-body">
-                                <h5 class="card-title">Paket Sayur Sop</h5>
-                                <p class="card-text">Isi A, Isi B, Isi C</p>
-                                <p class="card-text">Stock: 20</p>
-                                <h5 class="card-harga text-center">Rp13.500</h5>
-                                <div class="text-center" style="margin-top:10px;">
-                                    <a href="#" class="btn btn-detail btn-warning btn-lg" style="color: white;font-weight: 600;">Detail</a>
-                                </div>     
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Products -->
         <div class="container-fluid">
-            <div class="container">
+            <div class="container py-5">
                 <div class="row">
                     <div class="col-12">
                         <h1 class="text-center" style="color:#E7B10A;">Products</h1>
@@ -128,7 +59,7 @@
         </div>
         
     <!-- load more -->
-    <div class="container-fluid">
+    {{-- <div class="container-fluid">
         <div class="container" style="margin-top: 25px;margin-bottom: 25px;">
             <div class="row">
                 <div class="col-12 text-center">
@@ -136,7 +67,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!--FOOTER-->
     @include('layouts/footer')

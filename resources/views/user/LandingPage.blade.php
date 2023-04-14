@@ -13,36 +13,71 @@
   @include('layouts/navbar')
   
   <!--CAROUSEL-->
-  <div class="carousel slide py-5 mb-5 hero-header">
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          </div>
-      <div class="container text-left py-5">
-          <div class="row justify-content-start">
-              <div class="col-lg-8 text-center text-lg-start">
-                  <h1 class="fw-bold text-light pb-3">LaukpauK</h1>
-                  <h2>Catchphrase web gan</h2>
+  <div class="carousel slide mb-5">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{ asset('assets/user/images/landingPage/banner1.png') }}" class="d-block w-100" alt="...">
+            
+            <div class="carousel-caption d-flex text-left">
+              <div class="col-lg-8 text-lg-start">
+                <h1 class="fw-bold text-light pb-3">LaukpauK</h1>
+                <h2>Catchphrase web gan</h2>
               </div>
+            </div>
           </div>
-      </div>
+
+          <div class="carousel-item active">
+            <img src="{{ asset('assets/user/images/landingPage/banner1.png') }}" class="d-block w-100" alt="...">
+            
+            <div class="carousel-caption d-flex text-left">
+              <div class="col-lg-8 text-lg-start">
+                <h1 class="fw-bold text-light pb-3">LaukpauK</h1>
+                <h2>Catchphrase web gan</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item active">
+            <img src="{{ asset('assets/user/images/landingPage/banner1.png') }}" class="d-block w-100" alt="...">
+            
+            <div class="carousel-caption d-flex text-left">
+              <div class="col-lg-8 text-lg-start">
+                <h1 class="fw-bold text-light pb-3">LaukpauK</h1>
+                <h2>Catchphrase web gan</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+
       </div>
   </div>
 
   <!--INTRO-->
   <div class="container-fluid text-center mb-5 p-3">
       <div class="row justify-content-center text-center">
-          <center><h4 class="mb-2">Introduction</h4></center>
+          <center><h4 class="mb-2">LaukpauK</h4></center>
           <div class="col-md-8 text-center">
-              <p>Lorem ipsum dolor sit amet consectetur. Condimentum lacinia pulvinar 
-              morbi urna adipiscing id quis dolor. Euismod lacinia hendrerit sed 
-              diam aliquam ac. Euismod lacinia hendrerit sed diam aliquam ac. 
-              Id cum id nulla nulla laoreet in pellentesque.</p>
+              <p>Selamat datang di website kami yang berfokus pada makanan  4 sehat 5 sempurna. Kami percaya bahwa makanan adalah sumber energi penting bagi tubuh, dan bahwa makanan yang sehat adalah kunci untuk menjaga tubuh dalam kondisi yang baik.</p>
           </div>
           <div class="col-md-text-center">
               <button type="button" class="btn btn-learn" data-bs-toggle="" data-bs-target="">
-                  <h5 class="pt-2 mx-1">Learn More</h5>
+                  <h5 class="pt-2 mx-1">Shop Now</h5>
               </button>
           </div>
       </div>
@@ -53,10 +88,9 @@
       <div class="row align-items-center">
           <div class="col-md-4 order-2">
               <h4 class="mb-2">About Us</h4>
-              <p>Lorem ipsum dolor sit amet consectetur. Condimentum lacinia pulvinar 
-                  morbi urna adipiscing id quis dolor. Euismod lacinia hendrerit sed 
-                  diam aliquam ac. Euismod lacinia hendrerit sed diam aliquam ac. 
-                  Id cum id nulla nulla laoreet in pellentesque.</p>
+              <p>LaukpauK percaya bahwa memilih makanan yang sehat dan bergizi merupakan kunci utama untuk mencapai kesehatan yang optimal, dan dengan fokus pada prinsip makanan 4 sehat 5 sempurna.
+                <br><br>
+                LaukpauK tidak hanya menyediakan informasi dan saran mengenai makanan sehat, namun juga menyajikan berbagai resep dan tips memasak yang mudah diikuti, sehingga Anda dapat memperoleh makanan sehat dan lezat untuk dikonsumsi setiap hari.</p>
           </div>
           <div class="col-md-6 text-center" data-aos="fade-right">
               <img src="{{ asset('assets/user/images/landingPage/cook.png') }}" alt="Image" class="img-fluid" width="50%">
@@ -76,22 +110,20 @@
               <div class="col-md-4">
                   <div class="step">
                       <img src="{{ asset('assets/user/images/landingPage/fruits.png') }}" alt="Image" class="img-fluid" width="80%">
-                      <p class="mt-3">orem ipsum dolor sit amet consectetur. Condimentum lacinia pulvinar 
-                          morbi urna adipiscing id quis dolor.</p>
+                      <p class="mt-3">Bahan masakan yang segar & fresh untuk dimasak.</p>
                   </div>
               </div>
               <div class="col-md-4">
                   <div class="step">
                       <img src="{{ asset('assets/user/images/landingPage/meats.png') }}" alt="Image" class="img-fluid" width="80%">
-                      <p class="mt-3">orem ipsum dolor sit amet consectetur. Condimentum lacinia pulvinar 
-                          morbi urna adipiscing id quis dolor.</p>
+                      <p class="mt-3">Harga yang terjangkau 
+                        & ramah dikantong.</p>
                   </div>
               </div>
               <div class="col-md-4">
                   <div class="step">
                       <img src="{{ asset('assets/user/images/landingPage/green.png') }}" alt="Image" class="img-fluid" width="80%">
-                      <p class="mt-3">orem ipsum dolor sit amet consectetur. Condimentum lacinia pulvinar 
-                          morbi urna adipiscing id quis dolor.</p>
+                      <p class="mt-3">Lebih hemat & tidak ribet memilih bahan masakan.</p>
                   </div>
               </div>
           </div>
@@ -108,7 +140,8 @@
         <div class="col-md-7">
           <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
+              
+              <div class="swiper-slide mx-5">
                 <div class="review text-center">
                   <p class="stars">
                     <span class="bi bi-star-fill"></span>
@@ -117,12 +150,9 @@
                     <span class="bi bi-star-fill"></span>
                     <span class="bi bi-star-fill muted"></span>
                   </p>
-                  <h3>So Helpful!</h3>
+                  <h3>Rekomen, No Debat!</h3>
                   <blockquote>
-                    <p>Lorem ipsum dolor sit amet consectetur. 
-                        Condimentum lacinia pulvinar morbi urna adipiscing id quis dolor. 
-                        Euismod lacinia hendrerit sed diam aliquam ac. 
-                        Id cum id nulla nulla laoreet in pellentesque.</p>
+                    <p>“Mantap banget bumbunya pas dimasak menendang banget kek masakan orang rumah hehehe.“</p>
                   </blockquote>
                   <p class="review-user">
                     <img src="{{ asset('assets/user/images/landingPage/person_1.jpg') }}" alt="Image" class="img-fluid rounded-circle mb-3">
@@ -132,6 +162,7 @@
                   </p>
                 </div>
               </div>
+
               <div class="swiper-slide">
                 <div class="review text-center">
                   <p class="stars">
@@ -141,11 +172,9 @@
                     <span class="bi bi-star-fill"></span>
                     <span class="bi bi-star-fill muted"></span>
                   </p>
-                  <h3>Always be my go-to shopping site!</h3>
+                  <h3>Wuenak Pol!</h3>
                   <blockquote>
-                    <p>Lorem ipsum dolor sit amet consectetur. Condimentum lacinia pulvinar morbi urna adipiscing id quis dolor.
-                        Euismod lacinia hendrerit sed diam aliquam ac.
-                        Id cum id nulla nulla laoreet in pellentesque.</p>
+                    <p>“Mantap banget bumbunya pas dimasak menendang banget kek masakan orang rumah hehehe.“</p>
                   </blockquote>
                   <p class="review-user">
                     <img src="{{ asset('assets/user/images/landingPage/person_2.jpg') }}" alt="Image" class="img-fluid rounded-circle mb-3">

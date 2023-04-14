@@ -111,7 +111,7 @@ class UserController extends Controller
             'name' => $request->name
         ];
 
-        Mail::to('wakhidyusuf75@gmail.com')->send(new testSendEmail($data_email));
+        Mail::to('fadhil122424@gmail.com')->send(new testSendEmail($data_email));
         // Mail::send('user/contactUs', $data_email, function ($message) use ($data_email) {
         //     $message->to('wakhidyusuf75@gmail.com')
         //         ->subject($data_email['subject'])

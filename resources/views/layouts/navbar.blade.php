@@ -1,7 +1,7 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
     <div class="container-fluid text-center">
         <div class="col-4 d-flex justify-content-center">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset('assets/user/images/landingPage/logo.png') }}" alt="Bootstrap" width="" height="50">
             </a>
         </div>
