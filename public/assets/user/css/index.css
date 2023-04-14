@@ -202,3 +202,10 @@ h5 {
 footer {
     background: #1a1a1a;
 }
+
+.carousel-inner > .carousel-item > img,
+.carousel-inner > .carousel-item > a > img {
+    display: block;
+    height: auto;
+    width: 100%;
+}

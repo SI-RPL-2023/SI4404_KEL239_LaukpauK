@@ -13,32 +13,35 @@
   @include('layouts/navbar')
   
   <!--CAROUSEL-->
-  <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <div class="carousel slide mb-5">
+    <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="4000">
+          <img src="{{ asset('assets/user/images/landingPage/Carosel1.png') }}" class="d-block" alt="LaukpauK">
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img src="{{ asset('assets/user/images/landingPage/Carosel2.png') }}" class="d-block" alt="Why Healthy Food?">
+        </div>
+        <div class="carousel-item" data-bs-interval="4000">
+          <img src="{{ asset('assets/user/images/landingPage/Carosel3.png') }}" class="d-block" alt="Healthy Food">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="4000">
-        <img src="{{ asset('assets/user/images/landingPage/Carosel1.png') }}" class="d-block" alt="LaukpauK">
-      </div>
-      <div class="carousel-item" data-bs-interval="4000">
-        <img src="{{ asset('assets/user/images/landingPage/Carosel2.png') }}" class="d-block" alt="Why Healthy Food?">
-      </div>
-      <div class="carousel-item" data-bs-interval="4000">
-        <img src="{{ asset('assets/user/images/landingPage/Carosel3.png') }}" class="d-block" alt="Healthy Food">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+</div>
+  
 
   <!--INTRO-->
   <div class="container-fluid text-center mb-5 p-3">
