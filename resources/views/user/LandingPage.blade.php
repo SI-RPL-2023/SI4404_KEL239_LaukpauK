@@ -13,59 +13,31 @@
   @include('layouts/navbar')
   
   <!--CAROUSEL-->
-  <div class="carousel slide mb-5">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="false">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{{ asset('assets/user/images/landingPage/banner1.png') }}" class="d-block w-100" alt="...">
-            
-            <div class="carousel-caption d-flex text-left">
-              <div class="col-lg-8 text-lg-start">
-                <h1 class="fw-bold text-light pb-3">LaukpauK</h1>
-                <h2>Catchphrase web gan</h2>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item active">
-            <img src="{{ asset('assets/user/images/landingPage/banner1.png') }}" class="d-block w-100" alt="...">
-            
-            <div class="carousel-caption d-flex text-left">
-              <div class="col-lg-8 text-lg-start">
-                <h1 class="fw-bold text-light pb-3">LaukpauK</h1>
-                <h2>Catchphrase web gan</h2>
-              </div>
-            </div>
-          </div>
-
-          <div class="carousel-item active">
-            <img src="{{ asset('assets/user/images/landingPage/banner1.png') }}" class="d-block w-100" alt="...">
-            
-            <div class="carousel-caption d-flex text-left">
-              <div class="col-lg-8 text-lg-start">
-                <h1 class="fw-bold text-light pb-3">LaukpauK</h1>
-                <h2>Catchphrase web gan</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-
+  <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="4000">
+        <img src="{{ asset('assets/user/images/landingPage/Carosel1.png') }}" class="d-block" alt="LaukpauK">
       </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="{{ asset('assets/user/images/landingPage/Carosel2.png') }}" class="d-block" alt="Why Healthy Food?">
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="{{ asset('assets/user/images/landingPage/Carosel3.png') }}" class="d-block" alt="Healthy Food">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 
   <!--INTRO-->
@@ -76,9 +48,7 @@
               <p>Selamat datang di website kami yang berfokus pada makanan  4 sehat 5 sempurna. Kami percaya bahwa makanan adalah sumber energi penting bagi tubuh, dan bahwa makanan yang sehat adalah kunci untuk menjaga tubuh dalam kondisi yang baik.</p>
           </div>
           <div class="col-md-text-center">
-              <button type="button" class="btn btn-learn" data-bs-toggle="" data-bs-target="">
-                  <h5 class="pt-2 mx-1">Shop Now</h5>
-              </button>
+              <a class="btn btn-learn p-3 fs-4 mx-1" href="{{ url('listProduct') }}"><strong>Shop Now</strong></a>
           </div>
       </div>
   </div>
