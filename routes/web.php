@@ -38,6 +38,12 @@ Route::get('/listProduct', [UserController::class, 'listProductView'])->name('li
 // LANDING PAGE
 Route::get('/', [UserController::class, 'landingPageView']);
 
+// PROFILE
+Route::get('/profile/{id}', [UserController::class, 'profileView'])->name('profile')->middleware('auth');
+Route::get('/editProfile/{id}', [UserController::class, 'editProfileView'])->name('editProfileView')->middleware('auth');
+Route::post('/editProfile/{id}', [UserController::class, 'updateProfile'])->name('updateProfile')->middleware('auth');
+
+
 // ----------------------------------------------ADMIN----------------------------------------------
 Route::prefix('/admin')->group(function () {
     // LIST PRODUCTS

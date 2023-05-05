@@ -35,10 +35,10 @@
                         <img src="{{ asset('assets/user/images/landingPage/cart.png') }}" alt="Bootstrap" width="" height="25">
                     </a>
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('assets/user/images/landingPage/user.png') }}" alt="Bootstrap" width="" height="27">
+                        <img src="{{ asset('storage/'.auth()->user()->foto_user) }}" class="rounded-circle" alt="Bootstrap" width="" height="40">
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="" class="dropdown-item">Profile</a></li>
+                        <li><a href="{{ route('profile', ['id' => auth()->user()->id]) }}" class="dropdown-item">Profile</a></li>
                         <form action="/logout" method="post">
                             @csrf
                             <button type="submit" class="dropdown-item">Logout</button>
