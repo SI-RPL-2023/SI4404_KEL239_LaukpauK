@@ -66,4 +66,16 @@ class ProductController extends Controller
         return redirect('/admin/listProduct')->with('updateSuccess', 'Produk Berhasil Diubah!');
         File::delete('storage/'.$product->gambar_produk);
     }
+
+    public function listProductView() {
+        $products = Product::all();
+
+        return view('user/listProduct', compact('products'));
+    }
+
+    public function detailProductView() {
+        // $products = Product::all();
+
+        return view('user/detailProduct');
+    }
 }

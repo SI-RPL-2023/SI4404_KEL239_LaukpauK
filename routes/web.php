@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ResepController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -42,8 +43,9 @@ Route::post('/logout', [UserController::class, 'logoutUser'])->name('logout');
 Route::get('/contactUs', [UserController::class, 'contactUsView'])->name('contactUs');
 Route::post('/sendEmail', [UserController::class, 'sendEmail'])->name('send.email');
 
-// LIST PRODUCT
-Route::get('/listProduct', [UserController::class, 'listProductView'])->name('listProductView');
+// PRODUCT
+Route::get('/listProduct', [ProductController::class, 'listProductView'])->name('listProductView');
+Route::get('/detailProduct/{id}', [ProductController::class, 'detailProductView'])->name('detailProduct');
 
 // LANDING PAGE
 Route::get('/', [UserController::class, 'landingPageView'])->name('landingPage');
@@ -52,6 +54,9 @@ Route::get('/', [UserController::class, 'landingPageView'])->name('landingPage')
 Route::get('/profile/{id}', [UserController::class, 'profileView'])->name('profile')->middleware('auth');
 Route::get('/editProfile/{id}', [UserController::class, 'editProfileView'])->name('editProfileView')->middleware('auth');
 Route::post('/editProfile/{id}', [UserController::class, 'updateProfile'])->name('updateProfile')->middleware('auth');
+
+// RESEP 
+Route::get('/resep/{id}', [ResepController::class, 'detailResepView'])->name('detailResep');
 
 
 // ----------------------------------------------ADMIN----------------------------------------------

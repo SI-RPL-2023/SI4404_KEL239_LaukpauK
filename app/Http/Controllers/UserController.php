@@ -122,12 +122,6 @@ class UserController extends Controller
         return redirect('/contactUs')->with('sendEmailSuccess', 'Pesan Berhasil Dikirim!');
     }
 
-    public function listProductView() {
-        $products = Product::all();
-
-        return view('user/listProduct', compact('products'));
-    }
-
     public function profileView($id) {
         $user = User::find($id);
 
