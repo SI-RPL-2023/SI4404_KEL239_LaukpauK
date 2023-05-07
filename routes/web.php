@@ -56,7 +56,7 @@ Route::get('/editProfile/{id}', [UserController::class, 'editProfileView'])->nam
 Route::post('/editProfile/{id}', [UserController::class, 'updateProfile'])->name('updateProfile')->middleware('auth');
 
 // RESEP 
-Route::get('/resep/{id}', [ResepController::class, 'detailResepView'])->name('detailResep')->middleware('auth');
+Route::get('/resep/{id}', [ResepController::class, 'detailResepView'])->name('detailResep');
 
 
 // ----------------------------------------------ADMIN----------------------------------------------
