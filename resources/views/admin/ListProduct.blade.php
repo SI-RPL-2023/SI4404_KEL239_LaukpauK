@@ -1,4 +1,4 @@
-@extends('layouts/main-layout')
+@extends('layouts.header')
 
 @section('title')
     List Product
@@ -85,7 +85,7 @@
                                             <td class="text-dark" style="text-align: center;">{{ 'Rp.'.$product->harga }}</td>
                                             <td class="text-dark" style="text-align: center;">{{ $product->stock }}</td>
                                             <td style="text-align: center;">
-                                                <a class="btn btn-primary" style="background: #e7b10a;margin-bottom: 12px;width: 112.3312px;" href="{{ url('/admin/editProduct/'.$product->id) }}">
+                                                <a class="btn btn-primary" style="background: #e7b10a;margin-bottom: 12px;width: 112.3312px;" href="{{ route('editProduct', ['id' => $product->id]) }}">
                                                     <strong>Edit</strong>
                                                 </a>
                                                 <form action="{{ url('/admin/deleteProduct/'.$product->id) }}" method="post">

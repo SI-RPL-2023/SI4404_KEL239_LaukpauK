@@ -1,7 +1,7 @@
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
     <div class="container-fluid text-center">
         <div class="col-4 d-flex justify-content-center">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ route('landingPage') }}">
                 <img src="{{ asset('assets/user/images/landingPage/logo.png') }}" alt="Bootstrap" width="" height="50">
             </a>
         </div>
@@ -14,13 +14,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto mx-lg-auto py-0">
-                    <a href="{{ url('/') }}" class="nav-item nav-link active"><b>Home</b></a>
+                    <a href="{{ route('landingPage') }}" class="nav-item nav-link {{ set_active(['/', 'landingPage']) }}"><b>Home</b></a>
                     @auth
                         <a href="" class="nav-item nav-link"><b>Articles</b></a>
                         <a href="" class="nav-item nav-link"><b>Recipe</b></a>
                     @endauth
-                    <a href="{{ url('listProduct') }}" class="nav-item nav-link"><b>Products</b></a>
-                    <a href="{{ url('contactUs') }}" class="nav-item nav-link"><b>Contact</b></a>
+                    <a href="{{ route('listProductView') }}" class="nav-item nav-link {{ set_active(['listProduct', 'listProductView']) }}"><b>Products</b></a>
+                    <a href="{{ route('contactUs') }}" class="nav-item nav-link {{ set_active('contactUs') }}"><b>Contact</b></a>
                     @auth
                         <a href="" class="nav-item nav-link"><b>Orders</b></a>
                     @endauth
@@ -32,10 +32,10 @@
             <div class="col-4">
                 <div class="nav-item dropdown">
                     <a class="navbar-brand" href="">
-                        <img src="{{ asset('assets/user/images/landingPage/cart.png') }}" alt="Bootstrap" width="" height="25">
+                        <img src="{{ asset('assets/user/images/landingPage/cart.png') }}" alt="Cart Icon" width="" height="25">
                     </a>
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('storage/'.auth()->user()->foto_user) }}" class="rounded-circle" alt="Bootstrap" width="" height="40">
+                        <img src="{{ asset('storage/'.auth()->user()->foto_user) }}" class="rounded-circle" alt="Foto User" width="" height="40">
                     </button>
                     <ul class="dropdown-menu">
                         <li><a href="{{ route('profile', ['id' => auth()->user()->id]) }}" class="dropdown-item">Profile</a></li>

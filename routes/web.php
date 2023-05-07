@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// set active side barr
+function set_active($route) {
+    if (is_array($route)) {
+        return in_array(Request::path(), $route) ? 'active' : '';
+    }
+
+    return Request::path() == $route ? 'active' : '';
+}
 
 // ----------------------------------------------USER----------------------------------------------
 // LOGIN
@@ -36,7 +46,7 @@ Route::post('/sendEmail', [UserController::class, 'sendEmail'])->name('send.emai
 Route::get('/listProduct', [UserController::class, 'listProductView'])->name('listProductView');
 
 // LANDING PAGE
-Route::get('/', [UserController::class, 'landingPageView']);
+Route::get('/', [UserController::class, 'landingPageView'])->name('landingPage');
 
 // PROFILE
 Route::get('/profile/{id}', [UserController::class, 'profileView'])->name('profile')->middleware('auth');

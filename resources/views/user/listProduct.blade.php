@@ -1,4 +1,4 @@
-@extends('layouts.main-layout')
+@extends('layouts.header')
 
 @section('css')
      <link rel="stylesheet" href="{{ asset('assets/user/css/csslistproduk.css') }}">

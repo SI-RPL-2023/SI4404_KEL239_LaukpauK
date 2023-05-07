@@ -1,4 +1,4 @@
-@extends('layouts.main-layout')
+@extends('layouts.header')
 
 @section('css')
      <link rel="stylesheet" href="{{ asset('assets/user/css/login.css') }}">
@@ -71,7 +71,7 @@
                               
                               <button type="submit" class="btn btn-lg text-white"
                                    style="padding-left: 2.5rem; padding-right: 2.5rem; background: #E7B10A; font-weight: 600;">Login</button>
-                              <p class="small fw-bold mt-3 pt-1 mb-0">Sudah Memiliki Akun? <a href="{{ '/register' }}"
+                              <p class="small fw-bold mt-3 pt-1 mb-0">Sudah Memiliki Akun? <a href="{{ url('register') }}"
                                         class="link-primary">Register</a></p>
 
                          </form>

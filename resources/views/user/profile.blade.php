@@ -1,4 +1,4 @@
-@extends('layouts.main-layout')
+@extends('layouts.header')
 
 @section('css')
      <link rel="stylesheet" href="{{ asset('assets/user/css/profile.css') }}">
@@ -29,7 +29,7 @@
                             @endif
                         </div>
                         <div class="mt-4 mb-4">
-                            <img src="{{ asset('storage/'.$user->foto_user) }}" alt="" class="rounded mx-auto d-block" width="200px">
+                            <img src="{{ asset('storage/'.$user->foto_user) }}" alt="Foto User" class="rounded mx-auto d-block" width="200px">
                         </div>
                         <div class="card-body">
                             <form>
