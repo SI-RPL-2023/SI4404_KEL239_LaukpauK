@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\User;
+use App\Models\Product;
+use App\Mail\testSendEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\testSendEmail;
-use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -126,4 +127,39 @@ class UserController extends Controller
 
         return view('user/listProduct', compact('products'));
     }
+
+    public function profileView($id) {
+        $user = User::find($id);
+
+        return view('user/profile', compact('user'));
+    }
+    
+    public function editProfileView($id) {
+        $user = User::find($id);
+
+        return view('user/editProfile', compact('user'));
+    }
+
+    public function updateProfile(Request $request) {
+        $id = $request->id;
+        $user = User::find($id);
+        
+        if ($request->hasFile('foto_user')) {
+            $extension = $request->file('foto_user')->getClientOriginalExtension();
+            $new_name = $request->nama_lengkap . '-' . now()->format('Y-m-d') . '.' . $extension;
+            $img = $request->file('foto_user')->storeAs('fotoProfileUser', $new_name);
+            $user->foto_user = $img;
+        }
+        
+        $user->nama_lengkap = $request->nama_lengkap;
+        $user->email = $request->email;
+        $user->nohp = $request->nohp;
+        $user->alamat = $request->alamat;
+        
+        $user->save();
+        return redirect('/profile/'.$request->id)->with('updateSuccess', 'Profile Berhasil Diubah!');
+        File::delete('storage/'.$user->foto_user);
+    }
+
+
 }
