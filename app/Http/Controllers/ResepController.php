@@ -10,7 +10,21 @@ class ResepController extends Controller
         return view('user/detailResep');
     }
 
-    public function resepView() {
+    public function showResep() {
         return view('user/resep');
     }
+
+    public function showResepAdmin() {
+        return view('admin/listResep');
+    }
+
+    public function detailResep() {
+        return view('admin/detailResep');
+    }
+
+    public function addResep() {
+        return view('admin/addResep');
+    }
+
+    
 }

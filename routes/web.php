@@ -58,7 +58,7 @@ Route::get('/editProfile/{id}', [UserController::class, 'editProfileView'])->nam
 Route::post('/editProfile/{id}', [UserController::class, 'updateProfile'])->name('updateProfile')->middleware('auth');
 
 // RESEP 
-Route::get('/resep', [ResepController::class, 'resepView'])->name('resep')->middleware('auth');
+Route::get('/resep', [ResepController::class, 'showResep'])->name('resep')->middleware('auth');
 Route::get('/resep/{id}', [ResepController::class, 'detailResepView'])->name('detailResep')->middleware('auth');
 
 // ARTIKEL
@@ -72,20 +72,34 @@ Route::get('/cart', [CartController::class, 'cartView'])->name('cart')->middlewa
 
 // ----------------------------------------------ADMIN----------------------------------------------
 Route::prefix('/admin')->group(function () {
+    // ============================================ PRODUCTS ============================================
     // LIST PRODUCTS
     Route::get('/listProduct', [AdminController::class, 'showProducts'])->middleware(['auth', 'role-auth'])->name('listProduct');
-
     // ADD PRODUCT
     Route::get('/addProduct', [AdminController::class, 'addProductView'])->middleware(['auth', 'role-auth'])->name('addProduct');
     Route::post('/saveProduct', [ProductController::class, 'saveProduct'])->middleware(['auth', 'role-auth'])->name('saveProduct');
-
     // UPDATE PRODUCT
     Route::get('/editProduct/{id}', [AdminController::class, 'editProductView'])->middleware(['auth', 'role-auth'])->name('editProduct');
     Route::post('/updateProduct/{id}', [ProductController::class, 'updateProduct'])->middleware(['auth', 'role-auth'])->name('updateProduct');
-
     // DELETE PRODUCT
     Route::delete('/deleteProduct/{id}', [ProductController::class, 'deleteProduct'])->middleware(['auth', 'role-auth'])->name('deleteProduct');
 
+    // ============================================ RESEP ============================================
+    // LIST RESEP
+    Route::get('/listResep', [ResepController::class, 'showResepAdmin'])->middleware(['auth', 'role-auth'])->name('listResepAdmin');
+    // DETAIL RESEP
+    Route::get('/detailResep/{id}', [ResepController::class, 'detailResep'])->middleware(['auth', 'role-auth'])->name('detailResepAdmin');
+    // ADD RESEP
+    Route::get('/addResep', [ResepController::class, 'addResep'])->middleware(['auth', 'role-auth'])->name('addResepAdmin');
+    
+    // ============================================ ARTIKEL ============================================
+    // LIST ARTIKEL
+    Route::get('/listArtikel', [ArticleController::class, 'showArtikelAdmin'])->middleware(['auth', 'role-auth'])->name('listArtikelAdmin');
+    // DETAIL ARTIKEL
+    Route::get('/detailArtikel/{id}', [ArticleController::class, 'detailArtikel'])->middleware(['auth', 'role-auth'])->name('detailArtikelAdmin');
+    // ADD ARTIKEL
+    Route::get('/addArtikel', [ArticleController::class, 'addArtikel'])->middleware(['auth', 'role-auth'])->name('addArtikelAdmin');
+    
     // DASHBOARD
     Route::get('/', [AdminController::class, 'dashboardView'])->name('dashboard')->middleware(['auth', 'role-auth']);
 });

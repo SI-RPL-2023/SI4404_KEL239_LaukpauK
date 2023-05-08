@@ -20,13 +20,13 @@
         <div id="wrapper">
 
             {{-- SIDEBAR --}}
-            @include('layouts/sidebar-admin')
+            @include('layouts.sidebar-admin')
             
             <div class="d-flex flex-column" id="content-wrapper">
                 <div id="content">
                     
                     {{-- NAVBAR --}}
-                    @include('layouts/navbar-admin')
+                    @include('layouts.navbar-admin')
 
                     <section></section>
                     
