@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ResepController;
 use App\Http\Controllers\UserController;
@@ -45,7 +47,7 @@ Route::post('/sendEmail', [UserController::class, 'sendEmail'])->name('send.emai
 
 // PRODUCT
 Route::get('/listProduct', [ProductController::class, 'listProductView'])->name('listProductView');
-Route::get('/detailProduct/{id}', [ProductController::class, 'detailProductView'])->name('detailProduct');
+Route::get('/detailProduct/{id}', [ProductController::class, 'detailProductView'])->name('detailProduct')->middleware('auth');
 
 // LANDING PAGE
 Route::get('/', [UserController::class, 'landingPageView'])->name('landingPage');
@@ -56,7 +58,16 @@ Route::get('/editProfile/{id}', [UserController::class, 'editProfileView'])->nam
 Route::post('/editProfile/{id}', [UserController::class, 'updateProfile'])->name('updateProfile')->middleware('auth');
 
 // RESEP 
-Route::get('/resep/{id}', [ResepController::class, 'detailResepView'])->name('detailResep');
+Route::get('/resep', [ResepController::class, 'resepView'])->name('resep')->middleware('auth');
+Route::get('/resep/{id}', [ResepController::class, 'detailResepView'])->name('detailResep')->middleware('auth');
+
+// ARTIKEL
+Route::get('/artikel', [ArticleController::class, 'artikelView'])->name('artikel')->middleware('auth');
+
+// CART
+Route::get('/cart', [CartController::class, 'cartView'])->name('cart')->middleware('auth');
+
+
 
 
 // ----------------------------------------------ADMIN----------------------------------------------

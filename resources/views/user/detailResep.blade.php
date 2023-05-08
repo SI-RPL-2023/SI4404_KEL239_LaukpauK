@@ -47,7 +47,7 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('assets/admin/js/bootstrap.min.js')}}"></script>
+    {{-- <script src="{{ asset('assets/admin/js/bootstrap.min.js')}}"></script> --}}
     <script src="{{ asset('assets/user/js/bs-init.js') }}"></script>
     <script src="{{ asset('assets/user/js/Billing-Table-with-Add-Row--Fixed-Header-Feature.js') }}"></script>
     <script src="{{ asset('assets/user/js/Dynamically-Add-Remove-Table-Row.js') }}"></script>
