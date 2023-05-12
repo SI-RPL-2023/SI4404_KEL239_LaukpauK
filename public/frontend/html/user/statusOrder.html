@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="css/statusOrder.css" rel="stylesheet">
+    <title>LaukpauK</title>
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <div class="container-fluid text-center">
+            <div class="col-4 d-flex justify-content-center"> 
+                <a class="navbar-brand" href="index.php">
+                    <img src="./img/logo.png" alt="Bootstrap" width="" height="50">
+                  </a>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+            <a href="index.html" class="navbar-brand d-block d-lg-none">
+                <h2 class="m-0"><b>LaukpauK</b></h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto mx-lg-auto py-0">
+                        <a href="" class="nav-item nav-link active"><b>Home</b></a>
+                        <a href="" class="nav-item nav-link"><b>Products</b></a>
+                        <a href="" class="nav-item nav-link"><b>Articles</b></a>
+                        <a href="" class="nav-item nav-link"><b>Recipe</b></a>
+                        <a href="" class="nav-item nav-link"><b>Contact</b></a>
+                        <a href="" class="nav-item nav-link"><b>Order</b></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+                <div class="col-4">
+                    <div class="nav-item dropdown">
+                        <a class="navbar-brand" href="">
+                            <img src="./img/cart.png" alt="Bootstrap" width="" height="25">
+                        </a>
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="./img/user.png" alt="Bootstrap" width="" height="27">
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="" class="dropdown-item">Profile</a></li>
+                            <li><a href="" class="dropdown-item">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!--TITLE-->
+    <div class="container-fluid text-center mt-3 p-3">
+        <div class="row justify-content-center text-center">
+            <center><h4 class="mb-2">Order Status</h4></center>
+        </div>
+    </div>
+
+    <!--CONTENT-->
+    <section>
+        <div class="row mb-5">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                <div class="step">
+                    <table class="table text-center">
+                        <thead>
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Order Date</th>
+                            <th scope="col">Order Detail</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">123</th>
+                            <td>Mark</td>
+                            <td>24-03-2023</td>
+                            <td><button type="button" class="btn btn-modal2" >See Details</button></td>
+                            <td><button type="button" class="btn btn-success">Done</button></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">124</th>
+                            <td>Padil</td>
+                            <td>24-03-2023</td>
+                            <td><button type="button" class="btn btn-modal2" >See Details</button></td>
+                            <td><button type="button" class="btn btn-secondary">Waiting</button></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+        
+    </section>
+
+    <!--JUMBOTRON-->
+    <section>
+        <div class="col-md-12">
+          <div class="h-100 p-5 jumbo">
+            <div class="row">
+              <div class="col-sm-8 mt-3">
+                  <h3><strong>About Us</strong></h3>
+                  <br><p class="jumbo-text">Aplikasi berbasis website yang bernama “LaukpauK” yang dapat digunakan membantu masyarakat indonesia terutama daerah bandung 
+                      untuk mendapatkan lauk pauk 4 sehat 5 sempurna yang siap untuk dimasak, memberikan artikel edukasi mengenai masakan 4 sehat 5 sempurna, 
+                      memberikan resep makanan 4 sehat 5 sempurna yang dapat dimasak ibu rumah tangga.</p><br>
+                <button type="button" class="btn btn-modal" data-bs-toggle="modal" data-bs-target="#Modal1">
+                Learn More
+                </button>
+              </div>
+              <div class="col-sm-4" align=""right>
+                <h3><strong>Find Us On</strong></h3>
+                <table class="table table-borderless">
+                    <tr>
+                      <td>
+                        <a class="me-3" href="https://www.instagram.com/"><img src="./img/ig.png" width="30" alt=""></a>
+                        <a class="me-3" href="https://id-id.facebook.com/"><img src="./img/fb.png" width="30" alt=""></a>
+                        <a class="me-3" href="https://twitter.com/i/flow/login"><img src="./img/twt.png" width="30" alt=""></a>
+                      </td>
+                      <td>
+                        <img src="" width="60" alt="">
+                      </td>
+                      <td>
+                        <img src="" width="60" alt="">
+                      </td>
+                    </tr>
+                </table>
+                <h3><strong>Contact Us</strong></h3>
+                <table>
+                  <tr>
+                    <td>
+                      <img class="me-3 pb-2" src="./img/mail.png" width="20">
+                    </td>
+                    <td>
+                      <p class="jumbo-text">support-laukpauk@gmail.com</p>
+                    </td>
+                  </tr>
+                </table>
+                <table>
+                  <tr>
+                    <td>
+                      <img class="me-3 pb-3" src="./img/wa.png" width="20">
+                    </td>
+                    <td>
+                      <p class="jumbo-text">+1 1221 3443</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>     
+          </div>
+        </div>
+      </section>
+  
+      <!-- MODAL -->
+      <section>
+        <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ModalLongTitle">More about us</h5>
+              </div>
+              <div class="modal-body">
+                  Aplikasi berbasis website yang bernama “LaukpauK” yang dapat digunakan membantu masyarakat indonesia terutama daerah bandung untuk 
+                  mendapatkan lauk pauk 4 sehat 5 sempurna yang siap untuk dimasak, memberikan artikel edukasi mengenai masakan 4 sehat 5 sempurna,
+                  memberikan resep makanan 4 sehat 5 sempurna yang dapat dimasak ibu rumah tangga.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!--FOOTER-->
+      <footer class="text-center text-lg-start jumbo-text">
+        <div class="text-center pt-3">
+          ©2023. All rights reserved
+        </div>
+      </footer>
+
+</body>
