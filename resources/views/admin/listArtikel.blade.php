@@ -29,7 +29,35 @@
                     @include('layouts.navbar-admin')
 
                     <h1 class="text-start text-warning mb-4 pt-sm-0 mt-sm-0" style="text-align: left;font-weight: bold;font-size: 46.88px;padding-left: 23px;margin-bottom: 7px;">List Artikel</h1>
-                    <div class="container-fluid" style="text-align: left;"><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 143.037px;"><a class="text-center link-warning" href="{{ route('addArtikelAdmin') }}"><span class="text-white" style="font-weight: bold;"><span style="color: rgb(255, 255, 255);">+Add Artikel</span></span></a></button>
+                    <div class="container-fluid" style="text-align: left;">
+                        <button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 143.037px;">
+                            <a class="text-center link-warning" href="{{ route('addArtikelAdmin') }}">
+                                <span class="text-white" style="font-weight: bold;">
+                                    <span style="color: rgb(255, 255, 255);">+Add Artikel</span>
+                                </span>
+                            </a>
+                        </button>
+                        @if (session()->has('saveSuccess'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('saveSuccess') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
+
+                        @if (session()->has('updateSuccess'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('updateSuccess') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
+                        
+                        @if (session()->has('deleteSuccess'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('deleteSuccess') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
+
                         <div class="card shadow">
                             <div class="card-body" style="margin-bottom: 78px;">
                                 <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
@@ -44,69 +72,41 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td class="text-dark" style="text-align: center;">1297476</td>
-                                                <td class="text-dark" style="text-align: center;">Paket Sayur Sop<br></td>
-                                                <td style="text-align: center;">
-                                                    <picture><img style="text-align: center;width: 133px;" width="116" height="96" src="assets/img/images.jpeg"></picture>
-                                                </td>
-                                                <td class="text-dark" style="text-align: center;">Jeffry Haqiqi</td>
-                                                <td style="text-align: center;">
-                                                    
-                                                    <button class="btn link-light" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 112.3312px;">
-                                                        <strong>Edit</strong>
-                                                    </button>
-                                                    
-                                                    <button class="btn link-light" type="button" style="background: #00AE11;margin-bottom: 12px;width: 112.3312px;">
-                                                        <a class="text-center link-warning" href="Detail%20Artikel%20admin.html"><span class="text-white" style="font-weight: bold;">Detail</span>
+                                            @foreach ($articles as $article)
+                                                <tr>
+                                                    <td class="text-dark" style="text-align: center;">{{ $article->id }}</td>
+                                                    <td class="text-dark" style="text-align: center;">{{ $article->judul }}<br></td>
+                                                    <td style="text-align: center;">
+                                                        <picture><img style="text-align: center;width: 133px;" width="116" height="96" src="{{ asset('storage/'. $article->gambar_artikel) }}"></picture>
+                                                    </td>
+                                                    <td class="text-dark" style="text-align: center;">{{ $article->users->nama_lengkap }}</td>
+                                                    <td style="text-align: center;">
+
+                                                        <a class="btn link-light text-center link-warning" href="{{ route('editArticle', ['slug' => $article->slug]) }}" style="background: #e7b10a;margin-bottom: 12px;width: 112.3312px;"><span class="text-white" style="font-weight: bold;">Edit</span>
                                                         </a>
-                                                    </button>
-                                                    
-                                                    <button class="btn link-light" type="button" style="background: #9d0000;margin-bottom: 12px;width: 117.2688px;">
-                                                        <strong>Delete</strong>
-                                                    </button>
-                                                
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-dark" style="text-align: center;">1297875</td>
-                                                <td class="text-dark" style="text-align: center;">Paket Iga Bakar</td>
-                                                <td class="text-dark" style="text-align: center;">
-                                                    <picture><img src="assets/img/images%20(1).jpeg" style="width: 133px;height: 96px;"></picture>
-                                                </td>
-                                                <td class="text-dark" style="text-align: center;">Ahmad Selbew</td>
-                                                <td style="text-align: center;">
-                                                    
-                                                    <button class="btn link-light" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 112.3312px;">
-                                                        <strong>Edit</strong>
-                                                    </button>
-                                                    
-                                                    <button class="btn link-light" type="button" style="background: #00AE11;margin-bottom: 12px;width: 112.3312px;">
-                                                        <a class="text-center link-warning" href="Detail%20Artikel%20admin.html"><span class="text-white" style="font-weight: bold;">Detail</span>
+
+                                                        <a class="btn link-light text-center link-warning" href="{{ route('detailArtikelAdmin', ['slug' => $article->slug]) }}" style="background: #00AE11;margin-bottom: 12px;width: 112.3312px;"><span class="text-white" style="font-weight: bold;">Detail</span>
                                                         </a>
-                                                    </button>
+
+                                                        <form action="{{ route('deleteArticle', ['id' => $article->id]) }}" method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button class="btn link-light text-center link-warning" type="submit" style="background: #9d0000;margin-bottom: 12px;width: 112.3312px;">
+                                                                <strong>Delete</strong>
+                                                            </button>
+                                                        </form>
                                                     
-                                                    <button class="btn link-light" type="button" style="background: #9d0000;margin-bottom: 12px;width: 117.2688px;">
-                                                        <strong>Delete</strong>
-                                                    </button>
-                                                
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
                                         </tbody>
-                                        <tfoot>
-                                            <tr></tr>
-                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <footer class="bg-white sticky-footer">
-                    <div class="container my-auto">
-                        <div class="text-center my-auto copyright"><span>Copyright © Brand 2023</span></div>
-                    </div>
-                </footer>
+                @include('layouts.footer-admin')
             </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
         </div>
     </body>
@@ -116,3 +116,4 @@
     <script src="{{ asset('assets/admin/js/bs-init.js') }}"></script>
     <script src="{{ asset('assets/admin/js/theme.js') }}"></script>
 @endsection
+

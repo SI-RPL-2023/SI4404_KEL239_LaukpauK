@@ -48,7 +48,9 @@
                                     <p class="card-text">Stock: {{ $product->stock }}</p>
                                     <h5 class="card-harga text-center">@currency($product->harga)</h5>
                                     <div class="text-center" style="margin-top:10px;">
-                                        <a href="#" class="btn btn-detail btn-warning btn-lg" style="color: white;font-weight: 600;">Detail</a>
+                                        <a href="{{ route('detailProduct', ['id' => $product->id]) }}" class="btn btn-detail btn-warning btn-lg {{ $product->stock === 0 ? 'disabled' : '' }}" style="color: white;font-weight: 600;">
+                                            {{ $product->stock === 0 ? 'Produk Tidak Tersedia' : 'Detail' }}
+                                        </a>
                                     </div>     
                                 </div>
                             </div>

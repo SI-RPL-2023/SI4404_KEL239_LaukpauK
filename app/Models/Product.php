@@ -24,4 +24,9 @@ class Product extends Model
         'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];
+
+    public function carts() {
+        return $this->belongsTo(Cart::class, 'id', 'id_product');
+    }
+
 }

@@ -17,48 +17,23 @@
       <section>
           <div class="container">
               <div class="row product-list dev">
-                  <div class="col-sm-6 col-md-4 product-item animation-element slide-top-right">
-                      <div class="product-container">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image.png" width="373" height="200"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 21px;">Cara Mudah Menerapkan Konsep 4 Sehat 5 Sempurna dalam Hidup Sehari-hari</h6><button class="btn text-center" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;text-align: center;"><a class="text-center link-warning" href="Detail%20Artikel.html"><span class="text-center text-white" style="font-weight: bold;font-size: 18.8px;text-align: center;"><span style="color: rgb(255, 255, 255);">Lihat Resep</span></span></a></button>
-                      </div>
-                      <div class="product-container" style="margin-top: 24px;">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image-8.png"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 21px;">Cara Mudah Menerapkan Konsep 4 Sehat 5 Sempurna dalam Hidup Sehari-hari</h6><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;text-align: center;"><a class="text-center link-warning" href="Detail%20Artikel.html"><span class="text-white" style="font-weight: bold;font-size: 18.8px;"><span style="color: rgb(255, 255, 255);">Lihat Resep</span></span></a></button>
-                      </div>
-                  </div>
-                  <div class="col-sm-6 col-md-4 product-item animation-element slide-top-right">
-                      <div class="product-container">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image-4.png" width="373" height="200"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 21px;">Cara Mudah Menerapkan Konsep 4 Sehat 5 Sempurna dalam Hidup Sehari-hari</h6><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;text-align: center;"><a class="text-center link-warning" href="Detail%20Artikel.html"><span class="text-white" style="font-weight: bold;font-size: 18.8px;"><span style="color: rgb(255, 255, 255);">Lihat Resep</span></span></a></button>
-                      </div>
-                      <div class="product-container" style="margin-top: 24px;">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image-9.png"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 21px;">Cara Mudah Menerapkan Konsep 4 Sehat 5 Sempurna dalam Hidup Sehari-hari</h6><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;text-align: center;"><a class="text-center link-warning" href="Detail%20Artikel.html"><span class="text-white" style="font-weight: bold;font-size: 18.8px;"><span style="color: rgb(255, 255, 255);">Lihat Resep</span></span></a></button>
-                      </div>
-                  </div>
-                  <div class="col-sm-6 col-md-4 product-item animation-element slide-top-right">
-                      <div class="product-container">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image-5.png"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 21px;">Cara Mudah Menerapkan Konsep 4 Sehat 5 Sempurna dalam Hidup Sehari-hari</h6><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;text-align: center;"><a class="text-center link-warning" href="Detail%20Artikel.html"><span class="text-white" style="font-weight: bold;font-size: 18.8px;"><span style="color: rgb(255, 255, 255);">Lihat Resep</span></span></a></button>
-                      </div>
-                      <div class="product-container" style="margin-top: 24px;">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image-10.png"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 21px;">Cara Mudah Menerapkan Konsep 4 Sehat 5 Sempurna dalam Hidup Sehari-hari</h6><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;text-align: center;"><a class="text-center link-warning" href="Detail%20Artikel.html"><span class="text-white" style="font-weight: bold;font-size: 18.8px;"><span style="color: rgb(255, 255, 255);">Lihat Resep</span></span></a></button>
-                      </div>
-                  </div>
+                  @foreach ($articles as $article)
+                    <div class="col-sm-6 col-md-4 product-item animation-element slide-top-right">
+                        <div class="product-container">
+
+                            <div class="row">
+                                <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="{{ asset('storage/'.$article->gambar_artikel) }}" width="373" height="200"></div>
+                            </div>
+
+                            <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 25px;">{{ $article->judul }}</h6>
+                            
+                            <a class="btn text-center link-warning" style="background: #e7b10a;margin-bottom: 12px;width: 371px;" href="{{ route('detailArtikelUser', ['slug' => $article->slug]) }}">
+                                <span class="text-white" style="font-weight: bold;font-size: 18.8px;">Lihat Selengkapnya<br></span>
+                            </a>
+
+                        </div>
+                    </div>
+                @endforeach
               </div>
           </div>
       </section>

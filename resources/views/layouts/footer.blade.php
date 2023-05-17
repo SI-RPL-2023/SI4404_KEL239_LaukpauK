@@ -77,6 +77,6 @@
 <!--FOOTER-->
 <footer class="text-center text-lg-start jumbo-text">
      <div class="text-center pt-3">
-          ©2023. All rights reserved
+          © LaukpauK 2023. All rights reserved
      </div>
 </footer>

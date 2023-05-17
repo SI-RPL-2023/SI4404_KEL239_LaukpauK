@@ -59,13 +59,16 @@ Route::post('/editProfile/{id}', [UserController::class, 'updateProfile'])->name
 
 // RESEP 
 Route::get('/resep', [ResepController::class, 'showResep'])->name('resep')->middleware('auth');
-Route::get('/resep/{id}', [ResepController::class, 'detailResepView'])->name('detailResep')->middleware('auth');
+Route::get('/resep/{slug}', [ResepController::class, 'detailResepUser'])->name('detailResepUser')->middleware('auth');
 
 // ARTIKEL
 Route::get('/artikel', [ArticleController::class, 'artikelView'])->name('artikel')->middleware('auth');
+Route::get('/artikel/{slug}', [ArticleController::class, 'detailArtikelUser'])->name('detailArtikelUser')->middleware('auth');
 
 // CART
 Route::get('/cart', [CartController::class, 'cartView'])->name('cart')->middleware('auth');
+Route::post('/addCart', [CartController::class, 'addCart'])->name('addCart')->middleware('auth');
+Route::get('/deleteCart/{id}', [CartController::class, 'deleteCart'])->middleware('auth')->name('deleteCart');
 
 
 
@@ -88,17 +91,31 @@ Route::prefix('/admin')->group(function () {
     // LIST RESEP
     Route::get('/listResep', [ResepController::class, 'showResepAdmin'])->middleware(['auth', 'role-auth'])->name('listResepAdmin');
     // DETAIL RESEP
-    Route::get('/detailResep/{id}', [ResepController::class, 'detailResep'])->middleware(['auth', 'role-auth'])->name('detailResepAdmin');
+    Route::get('/detailResep/{slug}', [ResepController::class, 'detailResepAdmin'])->middleware(['auth', 'role-auth'])->name('detailResepAdmin');
     // ADD RESEP
-    Route::get('/addResep', [ResepController::class, 'addResep'])->middleware(['auth', 'role-auth'])->name('addResepAdmin');
+    Route::get('/addResep', [ResepController::class, 'addResepView'])->middleware(['auth', 'role-auth'])->name('addResepAdmin');
+    Route::get('/addResep/checkSlug', [ResepController::class, 'checkSlug'])->middleware(['auth', 'role-auth'])->name('checkSlug');
+    Route::post('/addResep', [ResepController::class, 'addResep'])->middleware(['auth', 'role-auth'])->name('addResep');
+    // EDIT RESEP
+    Route::get('/editResep/{slug}', [ResepController::class, 'editResepView'])->middleware(['auth', 'role-auth'])->name('editResep');
+    Route::post('/updateResep/{id}', [ResepController::class, 'updateResep'])->middleware(['auth', 'role-auth'])->name('updateResep');
+    // DELETE RESEP
+    Route::delete('/deleteResep/{id}', [ResepController::class, 'deleteResep'])->middleware(['auth', 'role-auth'])->name('deleteResep');
     
     // ============================================ ARTIKEL ============================================
     // LIST ARTIKEL
     Route::get('/listArtikel', [ArticleController::class, 'showArtikelAdmin'])->middleware(['auth', 'role-auth'])->name('listArtikelAdmin');
     // DETAIL ARTIKEL
-    Route::get('/detailArtikel/{id}', [ArticleController::class, 'detailArtikel'])->middleware(['auth', 'role-auth'])->name('detailArtikelAdmin');
+    Route::get('/detailArtikel/{slug}', [ArticleController::class, 'detailArtikel'])->middleware(['auth', 'role-auth'])->name('detailArtikelAdmin');
     // ADD ARTIKEL
-    Route::get('/addArtikel', [ArticleController::class, 'addArtikel'])->middleware(['auth', 'role-auth'])->name('addArtikelAdmin');
+    Route::get('/addArtikel', [ArticleController::class, 'addArtikelView'])->middleware(['auth', 'role-auth'])->name('addArtikelAdmin');
+    Route::get('/addArtikel/checkSlug', [ArticleController::class, 'checkSlug'])->middleware(['auth', 'role-auth'])->name('checkSlug');
+    Route::post('/addArtikel', [ArticleController::class, 'addArtikel'])->middleware(['auth', 'role-auth'])->name('addArtikel');
+    // EDIT ARTIKEL
+    Route::get('/editArticle/{slug}', [ArticleController::class, 'editArticleView'])->middleware(['auth', 'role-auth'])->name('editArticle');
+    Route::post('/updateArticle/{id}', [ArticleController::class, 'updateArticle'])->middleware(['auth', 'role-auth'])->name('updateArticle');
+    // DELETE ARTIKEL
+    Route::delete('/deleteArticle/{id}', [ArticleController::class, 'deleteArticle'])->middleware(['auth', 'role-auth'])->name('deleteArticle');
     
     // DASHBOARD
     Route::get('/', [AdminController::class, 'dashboardView'])->name('dashboard')->middleware(['auth', 'role-auth']);

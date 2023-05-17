@@ -22,48 +22,23 @@
       <section>
           <div class="container">
               <div class="row product-list dev">
-                  <div class="col-sm-6 col-md-4 product-item animation-element slide-top-right">
-                      <div class="product-container">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image-7.png" width="373" height="200"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 25px;">Resep Coto Makasar</h6><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;"><a class="text-center link-warning" href="Detail%20Resep.html"><span class="text-white" style="font-weight: bold;font-size: 18.8px;">Lihat Resep<br></span></a></button>
-                      </div>
-                      <div class="product-container" style="margin-top: 24px;">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image-8.png"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 25px;">Resep Trancam Sayur</h6><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;"><a class="text-center link-warning" href="Detail%20Resep.html"><span class="text-white" style="font-weight: bold;font-size: 18.8px;">Lihat Resep<br></span></a></button>
-                      </div>
-                  </div>
-                  <div class="col-sm-6 col-md-4 product-item animation-element slide-top-right">
-                      <div class="product-container">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image-4.png" width="373" height="200"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 25px;">Resep Rendang Padang</h6><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;"><a class="text-center link-warning" href="Detail%20Resep.html"><span class="text-white" style="font-weight: bold;font-size: 18.8px;">Lihat Resep<br></span></a></button>
-                      </div>
-                      <div class="product-container" style="margin-top: 24px;">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image-9.png"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 25px;">Resep Gudeg Jogja</h6><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;"><a class="text-center link-warning" href="Detail%20Resep.html"><span class="text-white" style="font-weight: bold;font-size: 18.8px;">Lihat Resep<br></span></a></button>
-                      </div>
-                  </div>
-                  <div class="col-sm-6 col-md-4 product-item animation-element slide-top-right">
-                      <div class="product-container">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image-5.png"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 25px;">Resep Semur Jamur</h6><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;"><a class="text-center link-warning" href="Detail%20Resep.html"><span class="text-white" style="font-weight: bold;font-size: 18.8px;">Lihat Resep<br></span></a></button>
-                      </div>
-                      <div class="product-container" style="margin-top: 24px;">
-                          <div class="row">
-                              <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="assets/img/clipboard-image-10.png"></div>
-                          </div>
-                          <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 25px;">Resep Opor Ayam</h6><button class="btn" type="button" style="background: #e7b10a;margin-bottom: 12px;width: 371px;"><a class="text-center link-warning" href="Detail%20Resep.html"><span class="text-white" style="font-weight: bold;font-size: 18.8px;">Lihat Resep<br></span></a></button>
-                      </div>
-                  </div>
+                  @foreach ($recipes as $recipe)
+                    <div class="col-sm-6 col-md-4 product-item animation-element slide-top-right">
+                        <div class="product-container">
+                            
+                            <div class="row">
+                                <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="{{ asset('storage/'.$recipe->gambar_resep) }}" width="373" height="200"></div>
+                            </div>
+                            
+                            <h6 style="text-align: center;margin-bottom: 14px;padding-bottom: 4px;margin-top: 18px;font-size: 25px;">{{ $recipe->judul }}</h6>
+
+                            <a class="btn text-center link-warning" style="background: #e7b10a;margin-bottom: 12px;width: 371px;" href="{{ route('detailResepUser', ['slug' => $recipe->slug]) }}">
+                                <span class="text-white" style="font-weight: bold;font-size: 18.8px;">Lihat Selengkapnya<br></span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                @endforeach
               </div>
           </div>
       </section>

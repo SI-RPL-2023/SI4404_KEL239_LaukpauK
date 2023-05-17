@@ -26,52 +26,55 @@
           <div class="container position-relative">
               <div class="row">
                   <div class="col-md-6 col-xl-4 col-xxl-8">
-                      <div></div>
+                    @if (session()->has('deleteCartSuccess'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('deleteCartSuccess') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                  @endif
                       <div class="card">
                           <div class="card-body" style="margin-bottom: 78px;">
                               <div class="table-responsive table mt-2" id="dataTable-2" role="grid" aria-describedby="dataTable_info">
-                                  <table class="table my-0" id="dataTable">
-                                      <thead>
-                                          <tr>
-                                              <th class="text-dark" style="text-align: center;width: 146.056px;font-weight: bold;">Produk</th>
-                                              <th class="text-dark" style="text-align: center;width: 118.181px;font-weight: bold;">Name</th>
-                                              <th class="text-dark" style="text-align: center;margin-right: 1px;width: 75.413px;font-weight: bold;">Price</th>
-                                              <th class="text-dark" style="text-align: center;width: 106.856px;font-weight: bold;">Stok</th>
-                                              <th class="text-dark" style="text-align: center;width: 126.038px;font-weight: bold;">Remove</th>
-                                          </tr>
-                                      </thead>
-                                      <tbody>
-                                          <tr>
-                                              <td style="text-align: center;">
-                                                  <picture><img style="text-align: center;width: 133px;" width="116" height="96" src="assets/img/images.jpeg"></picture>
-                                              </td>
-                                              <td class="text-dark" style="text-align: center;">Paket Sayur Sop<br></td>
-                                              <td class="text-dark" style="text-align: center;">Rp.20.000</td>
-                                              <td class="text-dark" style="text-align: center;">
-                                                <input class="form-control-sm font-sm" type="number" step="1" min="1" style="border-style: solid;border-color: var(--bs-card-cap-bg);border-top-color: #e7b10a;border-right-color: #e7b10a;border-bottom-color: #e7b10a;border-left-color: #e7b10a;" value="6">
-                                              </td>
-                                              <form action="" method="post">
-                                                <td style="text-align: center;">
-                                                    <button type="submit">
-                                                        <i class="fas fa-trash fs-1 text-danger" style="font-size: 20px;border-color: rgb(33, 37, 41);"></i>
-                                                    </button>
-                                                </td>
-                                              </form>
-                                          </tr>
-                                          <tr>
-                                              <td class="text-dark" style="text-align: center;">
-                                                  <picture><img src="assets/img/images%20(1).jpeg" style="width: 133px;height: 96px;"></picture>
-                                              </td>
-                                              <td class="text-dark" style="text-align: center;">Paket Iga Bakar</td>
-                                              <td class="text-dark" style="text-align: center;">Rp.20.000</td>
-                                              <td class="text-dark" style="text-align: center;"><input class="form-control-sm font-sm" type="number" step="1" min="1" style="border-style: solid;border-color: var(--bs-card-cap-bg);border-top-color: #e7b10a;border-right-color: #e7b10a;border-bottom-color: #e7b10a;border-left-color: #e7b10a;"></td>
-                                              <td style="text-align: center;"><i class="fas fa-trash fs-1 text-danger" style="font-size: 20px;border-color: rgb(33, 37, 41);"></i></td>
-                                          </tr>
-                                      </tbody>
-                                      <tfoot>
-                                          <tr></tr>
-                                      </tfoot>
-                                  </table>
+                                @if ($products->count() > 0)
+                                    <table class="table my-0" id="dataTable">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-dark" style="text-align: center;width: 146.056px;font-weight: bold;">Gambar Produk</th>
+                                                <th class="text-dark" style="text-align: center;width: 146.056px;font-weight: bold;">Name</th>
+                                                <th class="text-dark" style="text-align: center;margin-right: 1px;width: 75.413px;font-weight: bold;">Price</th>
+                                                <th class="text-dark" style="text-align: center;width: 106.856px;font-weight: bold;">Jumlah</th>
+                                                <th class="text-dark" style="text-align: center;width: 126.038px;font-weight: bold;">Remove</th>
+                                            </tr>
+                                        </thead>
+                                        <form action="" method="post">
+                                        @csrf
+                                        <tbody>
+                                            @foreach ($products as $product)
+                                                <tr>
+                                                    <input type="hidden" name="id_cart" value="{{ $product->id }}">
+                                                    <input type="hidden" name="id_user" value="{{ auth()->user()->id }}">
+                                                    <td style="text-align: center;">
+                                                        <img style="text-align: center;width: 133px;" width="116" height="96" src="{{ asset('storage/'.$product->products->gambar_produk) }}">
+                                                    </td>
+                                                    <td class="text-dark" style="text-align: center;">{{ $product->products->nama_produk }}<br></td>
+                                                    <td class="text-dark" style="text-align: center;">@currency( $product->products->harga)</td>
+                                                    <td class="text-dark" style="text-align: center;">
+                                                    <input class="form-control-sm font-sm text-center" type="text" style="border-style: solid;border-color: var(--bs-card-cap-bg);border-top-color: #e7b10a;border-right-color: #e7b10a;border-bottom-color: #e7b10a;border-left-color: #e7b10a;" value="{{ $product->jumlah }}" disabled>
+                                                    </td>
+                                                    <td style="text-align: center;">
+                                                        <a href="{{ route('deleteCart', ['id' => $product->id]) }}">
+                                                            <i class="fas fa-trash fs-1 text-danger" style="font-size: 20px;border-color: rgb(33, 37, 41);"></i>
+                                                        </a>
+                                                    </td> 
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </form>
+                                    </table>
+                                @else
+                                    <p class="text-dark" style="text-align: center;font-weight: bold;">Keranjang kamu masih kosong nih :(</p>
+                                @endif
+                                
                               </div>
                           </div>
                       </div>
@@ -87,10 +90,12 @@
                                           <tr></tr>
                                       </thead>
                                       <tbody>
-                                          <tr>
-                                              <td class="text-dark" style="text-align: left;width: 180.569px;">Paket Sayur Sop<br></td>
-                                              <td class="text-dark" style="text-align: right;">33</td>
-                                          </tr>
+                                            @foreach ($products as $product)
+                                                <tr>
+                                                    <td class="text-dark" style="text-align: left;width: 180.569px;">{{ $product->products->nama_produk }}<br></td>
+                                                    <td class="text-dark" style="text-align: right;">@currency( $product->total_price )</td>
+                                                </tr>
+                                            @endforeach
                                       </tbody>
                                       <tfoot>
                                           <tr></tr>
@@ -98,7 +103,9 @@
                                   </table>
                               </div>
                               <h6 class="text-dark float-start m-0 fw-bold" style="margin-left: 15px;padding-left: 12px;font-size: 22px;text-align: left;">Total</h6>
-                              <h6 class="text-dark float-end m-0 fw-bold" style="margin-left: 15px;padding-left: 12px;font-size: 22px;">Rp. 40.000</h6>
+                              <h6 class="text-dark float-end m-0 fw-bold" style="margin-left: 15px;padding-left: 12px;font-size: 22px;">
+                                @currency($products->sum('total_price'))
+                              </h6>
                           </div>
                           <button class="btn btn-modal" data-bs-toggle="modal" data-bs-target="#Modal1" type="button" style="background: #e7b10a;font-weight: bold;font-size: 18.8px;margin-top: 32px;">Buy Now</button>
                           <section class="position-relative" style="margin-bottom: 0px;padding-bottom: 0px;">
