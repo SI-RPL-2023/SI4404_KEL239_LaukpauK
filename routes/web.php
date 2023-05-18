@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ResepController;
 use App\Http\Controllers\UserController;
@@ -70,7 +71,9 @@ Route::get('/cart', [CartController::class, 'cartView'])->name('cart')->middlewa
 Route::post('/addCart', [CartController::class, 'addCart'])->name('addCart')->middleware('auth');
 Route::get('/deleteCart/{id}', [CartController::class, 'deleteCart'])->middleware('auth')->name('deleteCart');
 
-
+// ORDER
+Route::get('/orders', [OrderController::class, 'statusOrderView'])->name('orders')->middleware('auth');
+Route::get('/orderDetail/{id}', [OrderController::class, 'ordersView'])->name('orderDetail')->middleware('auth');
 
 
 // ----------------------------------------------ADMIN----------------------------------------------

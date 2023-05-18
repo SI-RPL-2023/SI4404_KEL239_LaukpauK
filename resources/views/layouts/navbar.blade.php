@@ -22,7 +22,7 @@
                     <a href="{{ route('listProductView') }}" class="nav-item nav-link {{ set_active(['listProduct', 'listProductView']) }}"><b>Products</b></a>
                     <a href="{{ route('contactUs') }}" class="nav-item nav-link {{ set_active('contactUs') }}"><b>Contact</b></a>
                     @auth
-                        <a href="" class="nav-item nav-link"><b>Orders</b></a>
+                        <a href="{{ route('orders') }}" class="nav-item nav-link"><b>Orders</b></a>
                     @endauth
                 </div>
             </div>
