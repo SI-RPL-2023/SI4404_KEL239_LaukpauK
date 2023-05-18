@@ -14,11 +14,18 @@
 
   <section class="position-relative py-4 py-xl-5">
       <h1 class="display-1 text-center text-warning float-start mb-4 pt-sm-0 mt-sm-0" style="text-align: left;font-weight: bold;font-size: 46.88px;margin-bottom: 7px;padding-left: 0px;margin-left: 142px;">Various Recipes</h1>
-      <h3 class="display-1 text-center text-warning mb-4 pt-sm-0 mt-sm-0" style="text-align: left;font-weight: bold;font-size: 46.88px;padding-left: 23px;margin-bottom: 7px;margin-right: 144px;margin-left: 140px;"><button class="btn float-end" type="button" style="background: #e7b10a;color: var(--bs-black);font-weight: bold;margin-right: 12px;font-size: 17px;width: 136.75px;">Filter Now</button><select class="border rounded float-end" style="background: var(--bs-black);color: #e7b10a;margin-right: 30px;height: 39.5px;font-size: 17px;width: 150px;font-weight: bold;text-align: center;">
-              <option value="12" selected="">Buah-Buahan</option>
-              <option value="13">Sayur</option>
-              <option value="14">Daging</option>
-          </select>&nbsp;</h3>
+      <h3 class="display-1 text-center text-warning mb-4 pt-sm-0 mt-sm-0" style="text-align: left;font-weight: bold;font-size: 46.88px;padding-left: 23px;margin-bottom: 7px;margin-right: 144px;margin-left: 140px;">
+            <form action="">
+                <button class="btn float-end" type="submit" style="background: #e7b10a;color: var(--bs-black);font-weight: bold;margin-right: 12px;font-size: 17px;width: 136.75px;">Filter Now</button>
+            
+                <select class="border rounded float-end" style="background: var(--bs-black);color: #e7b10a;margin-right: 30px;height: 39.5px;font-size: 17px;width: 150px;font-weight: bold;text-align: center;" name="kategori">
+                    <option value="Buah-Buahan" selected>Buah-Buahan</option>
+                    <option value="Sayur">Sayur</option>
+                    <option value="Daging">Daging</option>
+                </select>&nbsp;
+                
+            </form>
+        </h3>
       <section>
           <div class="container">
               <div class="row product-list dev">

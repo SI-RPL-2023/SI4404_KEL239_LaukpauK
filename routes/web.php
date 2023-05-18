@@ -121,6 +121,12 @@ Route::prefix('/admin')->group(function () {
     // DELETE ARTIKEL
     Route::delete('/deleteArticle/{id}', [ArticleController::class, 'deleteArticle'])->middleware(['auth', 'role-auth'])->name('deleteArticle');
     
+    // ORDER
+    Route::get('/listOrders', [AdminController::class, 'listOrderView'])->middleware(['auth', 'role-auth'])->name('listOrder');
+    Route::get('/editOrder/{id}', [AdminController::class, 'editOrderView'])->middleware(['auth', 'role-auth'])->name('editOrder');
+    Route::post('/updateStatus/{id}', [AdminController::class, 'updateStatus'])->middleware(['auth', 'role-auth'])->name('updateStatus');
+
+    
     // DASHBOARD
     Route::get('/', [AdminController::class, 'dashboardView'])->name('dashboard')->middleware(['auth', 'role-auth']);
 });

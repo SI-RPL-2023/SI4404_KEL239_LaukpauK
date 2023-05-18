@@ -109,13 +109,27 @@
                                                 <a href="{{ asset('storage/'.$order->bukti_bayar) }}" target="_blank">Lihat Bukti</a>
                                             </td>
                                             <td style="text-align: center;">
-                                                <button class="btn btn-primary" type="button" style="background: #00AE11;margin-bottom: 12px;width: 112.3312px;">
-                                                    <strong>{{ $order->status }}</strong>
-                                                </button>
-                                                
-                                                {{-- <button class="btn btn-primary" type="button" style="background: #878787;margin-bottom: 12px;width: 117.2688px;">
-                                                    <strong>Waiting</strong>
-                                                </button> --}}
+                                                @if ( $order->status === 'Menunggu Konfirmasi' )
+                                                    <button class="btn btn-primary" type="button" style="background: #a4a4a4;margin-bottom: 12px;width: 112.3312px;">
+                                                        <strong>{{ $order->status }}</strong>
+                                                    </button>
+                                                @elseif ( $order->status === 'Diproses' )
+                                                    <button class="btn btn-primary" type="button" style="background: #E7B10A;margin-bottom: 12px;width: 112.3312px;">
+                                                        <strong>{{ $order->status }}</strong>
+                                                    </button>
+                                                @elseif ( $order->status === 'Dikonfirmasi' )
+                                                    <button class="btn btn-primary" type="button" style="background: #E7B10A;margin-bottom: 12px;width: 112.3312px;">
+                                                        <strong>{{ $order->status }}</strong>
+                                                    </button>
+                                                @elseif ( $order->status === 'Dikirim' )
+                                                    <button class="btn btn-primary" type="button" style="background: #00AE11;margin-bottom: 12px;width: 112.3312px;">
+                                                        <strong>{{ $order->status }}</strong>
+                                                    </button>
+                                                @elseif ( $order->status === 'Canceled' )
+                                                    <button class="btn btn-primary" type="button" style="background: #FF0000;margin-bottom: 12px;width: 112.3312px;">
+                                                        <strong>{{ $order->status }}</strong>
+                                                    </button>
+                                                @endif
                                             </td>
                                         </tr>
                                     </tbody>

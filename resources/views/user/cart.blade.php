@@ -123,7 +123,6 @@
                                                 <div class="modal-body">
                                                         <select class="form-select-lg font-sm" style="margin-bottom: 13px;font-weight: bold;text-align: left;width: 146.6px;" id="payment" onchange="val()">
                                                             <option value="QRIS">QRIS</option>
-                                                            <option value="Transfer Bank">Transfer Bank</option>
                                                         </select>
                                                     
                                                         <div id="container" class="paymentView">

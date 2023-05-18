@@ -32,4 +32,25 @@ class AdminController extends Controller
 
         return view('admin.editProduct', compact('product'));
     }
+
+    public function listOrderView() {
+        $orders = Order::all();
+
+        return view('admin.listOrder', compact('orders'));
+    }
+
+    public function editOrderView(Request $request) {
+        $order = Order::find($request->id);
+
+        return view('admin.editOrder', compact('order'));
+    }
+
+    public function updateStatus(Request $request) {
+        $order = Order::find($request->id);
+
+        $order->status = $request->status;
+        $order->save();
+
+        return redirect('admin/listOrders')->with('updateStatusSuccess', 'Status Berhasil Diubah!');
+    }
 }

@@ -13,33 +13,39 @@ class ResepController extends Controller
     public function detailResepAdmin(Request $request) {
         $recipe = Recipe::where('slug', $request->slug)->with('users')->first();
         
-        return view('admin/detailResep', compact('recipe'));
+        return view('admin.detailResep', compact('recipe'));
     }
     
-    public function showResep() {
+    public function showResep(Request $request) {
         $recipes = Recipe::all();
+
+        if(isset($request->kategori)) {
+            $recipes = Recipe::where('kategori', $request->kategori)->get();
+            
+            return view('user.resep', compact('recipes'));
+        };
         
-        return view('user/resep', compact('recipes'));
+        return view('user.resep', compact('recipes'));
     }
 
     public function detailResepUser(Request $request) {
         $recipe = Recipe::where('slug', $request->slug)->with('users')->first();
         
-        return view('user/detailResep', compact('recipe'));
+        return view('user.detailResep', compact('recipe'));
     }
 
     public function showResepAdmin() {
         $recipes = Recipe::where('user_id', auth()->user()->id)->with('users')->get();
 
-        return view('admin/listResep', compact('recipes'));
+        return view('admin.listResep', compact('recipes'));
     }
 
     public function detailResep() {
-        return view('user/detailResep');
+        return view('user.detailResep');
     }
 
     public function addResepView() {
-        return view('admin/addResep');
+        return view('admin.addResep');
     }
 
     public function checkSlug(Request $request) {
@@ -73,7 +79,7 @@ class ResepController extends Controller
     public function editResepView(Request $request) {
         $recipe = Recipe::where('slug', $request->slug)->first();
         // dd($article);
-        return view('admin/editResep', compact('recipe'));
+        return view('admin.editResep', compact('recipe'));
     } 
 
     public function updateResep(Request $request) {

@@ -21,11 +21,11 @@
                         <h1 class="text-center" style="color: white;font-size: 64px;">Today's Favorite</h1>
                     </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-12 text-center" style="margin-top: 51px;">
                         <button type="button" class="btn btn-detail btn-outline-light btn-lg text-center">Learn More</button>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 

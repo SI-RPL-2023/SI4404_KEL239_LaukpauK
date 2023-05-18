@@ -1,7 +1,7 @@
 @extends('layouts.header')
 
 @section('title')
-    List Product
+    List Products
 @endsection
 
 @section('css')

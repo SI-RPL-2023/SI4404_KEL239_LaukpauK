@@ -13,7 +13,7 @@
             </li>
             <li class="nav-item"></li>
             <li class="nav-item">
-                <a class="nav-link text-center link-warning" href="Add%20Product.html" style="font-weight: bold;">
+                <a class="nav-link text-center link-warning" href="{{ route('listOrder') }}" style="font-weight: bold;">
                     <i class="fas fa-table text-warning"></i>
                     <span style="font-weight: bold;">List Order</span>
                 </a>

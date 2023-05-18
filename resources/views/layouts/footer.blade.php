@@ -17,9 +17,9 @@
                          <table class="table table-borderless">
                               <tr>
                                    <td>
-                                        <a class="me-3" href="https://www.instagram.com/"><img src="{{ asset('assets/user/images/landingPage/ig.png') }}" width="30" alt=""></a>
-                                        <a class="me-3" href="https://id-id.facebook.com/"><img src="{{ asset('assets/user/images/landingPage/fb.png') }}" width="30" alt=""></a>
-                                        <a class="me-3" href="https://twitter.com/i/flow/login"><img src="{{ asset('assets/user/images/landingPage/twt.png') }}" width="30" alt=""></a>
+                                        <a class="me-3" href="https://www.instagram.com/" target="_blank"><img src="{{ asset('assets/user/images/landingPage/ig.png') }}" width="30" alt=""></a>
+                                        <a class="me-3" href="https://id-id.facebook.com/" target="_blank"><img src="{{ asset('assets/user/images/landingPage/fb.png') }}" width="30" alt=""></a>
+                                        <a class="me-3" href="https://twitter.com/i/flow/login" target="_blank"><img src="{{ asset('assets/user/images/landingPage/twt.png') }}" width="30" alt=""></a>
                                    </td>
                                    <td>
                                         <img src="" width="60" alt="">
@@ -43,7 +43,9 @@
                          <table>
                               <tr>
                                    <td>
-                                        <img class="me-3 pb-3" src="{{ asset('assets/user/images/landingPage/wa.png') }}" width="20">
+                                        <a class="me-3" href="https://wa.me/112213443" target="_blank">
+                                             <img class="me-3 pb-3" src="{{ asset('assets/user/images/landingPage/wa.png') }}" width="20">
+                                        </a>
                                    </td>
                                    <td>
                                         <p class="jumbo-text">+1 1221 3443</p>
