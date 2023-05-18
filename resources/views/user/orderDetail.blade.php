@@ -33,16 +33,14 @@
                             <th scope="col">Quantity</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <td>Paket Sayur Sop</td>
-                            <td>2</td>
-                          </tr>
-                          <tr>
-                            <td>Paket Iga Bakar</td>
-                            <td>6</td>
-                          </tr>
-                        </tbody>
+                        @foreach ($order_detail as $detail)
+                          <tbody>
+                            <tr>
+                              <td>{{ $detail->products->nama_produk }}</td>
+                              <td>{{ $detail->jumlah }}</td>
+                            </tr>
+                          </tbody>
+                        @endforeach
                       </table>
                 </div>
             </div>

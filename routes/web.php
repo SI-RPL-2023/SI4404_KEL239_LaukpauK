@@ -73,7 +73,8 @@ Route::get('/deleteCart/{id}', [CartController::class, 'deleteCart'])->middlewar
 
 // ORDER
 Route::get('/orders', [OrderController::class, 'statusOrderView'])->name('orders')->middleware('auth');
-Route::get('/orderDetail/{id}', [OrderController::class, 'ordersView'])->name('orderDetail')->middleware('auth');
+Route::get('/orderDetail/{id}', [OrderController::class, 'orderDetailView'])->name('orderDetail')->middleware('auth');
+Route::post('/tambahPesanan', [OrderController::class, 'tambahPesanan'])->name('tambahPesanan')->middleware('auth');
 
 
 // ----------------------------------------------ADMIN----------------------------------------------

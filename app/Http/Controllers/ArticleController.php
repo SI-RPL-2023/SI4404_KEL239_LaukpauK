@@ -13,29 +13,29 @@ class ArticleController extends Controller
     public function artikelView() {
         $articles = Article::all();
 
-        return view('user/artikel', compact('articles'));
+        return view('user.artikel', compact('articles'));
     }
 
     public function detailArtikelUser(Request $request) {
         $article = Article::where('slug', $request->slug)->with('users')->first();
         
-        return view('user/detailArtikel', compact('article'));
+        return view('user.detailArtikel', compact('article'));
     }
     
     public function showArtikelAdmin() {
         $articles = Article::where('user_id', auth()->user()->id)->with('users')->get();
 
-        return view('admin/listArtikel', compact('articles'));
+        return view('admin.listArtikel', compact('articles'));
     }
 
     public function detailArtikel(Request $request) {
         $article = Article::where('slug', $request->slug)->with('users')->first();
-        // dd($article);
-        return view('admin/detailArtikel', compact('article'));
+    
+        return view('admin.detailArtikel', compact('article'));
     }
 
     public function addArtikelView() {
-        return view('admin/addArtikel');
+        return view('admin.addArtikel');
     }
 
     public function checkSlug(Request $request) {
@@ -62,13 +62,13 @@ class ArticleController extends Controller
 
         Article::create($validated_data);
 
-        return redirect('/admin/listArtikel')->with('saveSuccess', 'Artikel berhasil dibuat!');
+        return redirect('admin.listArtikel')->with('saveSuccess', 'Artikel berhasil dibuat!');
     }
 
     public function editArticleView(Request $request) {
         $article = Article::where('slug', $request->slug)->first();
-        // dd($article);
-        return view('admin/editArtikel', compact('article'));
+        
+        return view('admin.editArtikel', compact('article'));
     } 
 
     public function updateArticle(Request $request) {
