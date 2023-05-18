@@ -16,13 +16,17 @@
         <h1 class="title text-warning" style="margin-top: 43px; margin-left: 100px; font-size: 64px;">Product Detail</h1>
     </div>
 
-    @if (session()->has('addCartSuccess'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('addCartSuccess') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <div class="d-flex row" style="margin-left: 100px;">
+        <div class="col-10">
+            @if (session()->has('addCartSuccess'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('addCartSuccess') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
         </div>
-    @endif
-
+    </div>
+    
     <div class="d-flex mb-5" style="">
         <div class="card" style="width: 597px; height: 506px; margin-left: 100px; margin-top: 44px;">
             <img src="{{ asset('storage/'.$product->gambar_produk) }}">
