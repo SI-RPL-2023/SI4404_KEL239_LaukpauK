@@ -1,4 +1,4 @@
-<section>
+<section style="">
      <div class="col-md-12">
           <div class="h-100 p-5 jumbo">
                <div class="row">

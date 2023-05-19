@@ -57,6 +57,7 @@
                                     <select class="form-select" style="height: 44px;font-size: 18px;width: 100%;margin-top: 11px;margin-bottom: 32px;padding-top: 0px;padding-bottom: 0px;border-color: rgb(133, 135, 150);color: var(--bs-black);" name="kategori" required>
                                         <option value="Sayur">Sayur</option>
                                         <option value="Daging">Daging</option>
+                                        <option value="Jasa">Jasa</option>
                                     </select>
 
                                 <button class="btn btn-primary link-light d-block btn-user w-100" type="submit" style="background: #e7b10a;font-weight: bold;font-size: 18.8px;">Submit</button>
