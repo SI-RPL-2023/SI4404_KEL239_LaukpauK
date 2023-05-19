@@ -82,7 +82,7 @@
                                             <td style="text-align: center;">
                                                 <picture><img style="text-align: center;width: 133px;" width="116" height="96" src="{{ asset('storage/'.$product->gambar_produk) }}"></picture>
                                             </td>
-                                            <td class="text-dark" style="text-align: center;">{{ 'Rp.'.$product->harga }}</td>
+                                            <td class="text-dark" style="text-align: center;">@currency($product->harga)</td>
                                             <td class="text-dark" style="text-align: center;">{{ $product->stock }}</td>
                                             <td style="text-align: center;">
                                                 <a class="btn btn-primary" style="background: #e7b10a;margin-bottom: 12px;width: 112.3312px;" href="{{ route('editProduct', ['id' => $product->id]) }}">

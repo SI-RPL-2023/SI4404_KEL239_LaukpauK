@@ -62,7 +62,7 @@
                                 @enderror
                                 
                                 <input id="isi_artikel" type="hidden" name="isi_artikel" value="{{ $article->isi_artikel }}">
-                                <trix-editor class="form-control" input="isi_artikel" style="margin-bottom: 25px;font-size: 18px;color: var(--bs-black);height: 182px;">
+                                <trix-editor class="form-control" input="isi_artikel" style="margin-bottom: 25px;font-size: 18px;color: var(--bs-black)">
                                 </trix-editor>
 
                                 {{-- <div class="x-dropdown dropdown pe-sm-0 ps-sm-0">

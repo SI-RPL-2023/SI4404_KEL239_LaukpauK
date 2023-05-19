@@ -69,7 +69,7 @@
                                 @enderror
                                 
                                 <input id="isi_resep" type="hidden" name="isi_resep" value="{{ $recipe->isi_resep }}">
-                                <trix-editor class="form-control" input="isi_resep" style="margin-bottom: 25px;font-size: 18px;color: var(--bs-black);height: 182px;">
+                                <trix-editor class="form-control" input="isi_resep" style="margin-bottom: 25px;font-size: 18px;color: var(--bs-black)">
                                 </trix-editor>
 
                                 <button class="btn link-light d-block btn-user w-100" type="submit" style="background: #e7b10a;font-weight: bold;font-size: 18.8px;">Submit</button>
