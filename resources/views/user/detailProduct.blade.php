@@ -52,6 +52,8 @@
             <h2 class="fw-bold" style="margin-left: 74px; margin-top: 14px; font-size: 20px; ">Share On</h2>
         </div>
     </div>
+    <div style="margin-bottom:250px">
+    </div>"
 
     @include('layouts.footer')
 
