@@ -15,7 +15,7 @@
             </li>
             <div class="d-none d-sm-block topbar-divider"></div>
             <li class="nav-item dropdown no-arrow">
-                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><img class="border rounded-circle img-profile" src="{{ asset('assets/admin/images/avatar1.jpeg') }}"></a>
+                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><img class="border rounded-circle img-profile" src="{{ asset('storage/'.auth()->user()->foto_user) }}"></a>
                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
                         <form action="/logout" method="post">
                             @csrf
