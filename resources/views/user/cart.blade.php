@@ -5,7 +5,7 @@
 @endsection
 
 @section('css')
-  <link rel="stylesheet" href="{{ asset('assets/user/css/index2.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/user/css/index.css') }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi&amp;display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito&amp;display=swap">
   <link rel="stylesheet" href="{{ asset('assets/user/fonts/fontawesome-all.min.css') }}">
