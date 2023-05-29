@@ -1,49 +1,57 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
 :root {
-    --primary: #E7B10A;
-    --secondary: #E8CA77;
-    --light: #FFFFFF;
-    --dark: #1A1A1A;
+    --primary: #e7b10a;
+    --secondary: #e8ca77;
+    --light: #ffffff;
+    --dark: #1a1a1a;
+}
+
+.imgratio {
+    width: 40%;
+    aspect-ratio: auto 1 / 1;
 }
 
 nav {
-    background: #1A1A1A;
+    background: #1a1a1a;
 }
 
-body{
+body {
     background-color: #eeeeee;
-    font-family: 'poppins';
+    font-family: "poppins";
 }
 
-h1{
-    font-family: 'Poppins' ;
+h1 {
+    font-family: "Poppins";
     font-size: 60px;
     color: var(--secondary);
 }
 
-h2, h3{
-    font-family: 'Poppins' ;
+h2,
+h3 {
+    font-family: "Poppins";
     font-size: 30px;
     color: var(--secondary);
 }
 
-h4{
-    font-family: 'Poppins' ;
+h4 {
+    font-family: "Poppins";
     font-size: 30px;
     font-weight: bolder;
     color: var(--primary);
 }
 
-h5{
-    font-family: 'Poppins' ;
+h5 {
+    font-family: "Poppins";
     font-size: 20px;
     font-weight: bolder;
     color: var(--secondary);
     padding: 0%;
 }
 
-.container, .container-md, .container-sm {
+.container,
+.container-md,
+.container-sm {
     max-width: 1200px;
     width: 100%;
     margin-right: auto;
@@ -51,15 +59,14 @@ h5{
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    font-family: 'Poppins' ;
+    font-family: "Poppins";
     padding: 15px 15px;
     font-size: 18px;
     font-weight: 500;
     color: var(--secondary);
     outline: none;
-    transition: .5s;
+    transition: 0.5s;
 }
-
 
 .sticky-top.navbar-dark .navbar-nav .nav-link {
     padding: 20px 15px;
@@ -71,7 +78,7 @@ h5{
 }
 
 @media (max-width: 991.98px) {
-    .navbar-dark .navbar-nav .nav-link  {
+    .navbar-dark .navbar-nav .nav-link {
         padding: 10px 0;
     }
 }
@@ -81,13 +88,12 @@ h5{
     background-size: cover;
 }
 
-
-.btn-modal{
+.btn-modal {
     --bs-btn-color: #f8f9fa;
     --bs-btn-border-color: #f8f9fa;
     --bs-btn-hover-color: #000;
     --bs-btn-hover-bg: var(--secondary);
-    --bs-btn-focus-shadow-rgb: 248,249,250;
+    --bs-btn-focus-shadow-rgb: 248, 249, 250;
     --bs-btn-active-bg: var(--light);
     --bs-btn-active-border-color: var(--light);
     --bs-btn-disabled-bg: transparent;
@@ -95,23 +101,23 @@ h5{
     --bs-gradient: none;
 }
 
-.btn-modal2{
+.btn-modal2 {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #E7B10A;
+    --bs-btn-bg: #e7b10a;
     --bs-btn-hover-color: #fff;
     --bs-btn-hover-bg: #cea017;
-    --bs-btn-focus-shadow-rgb: 60,153,110;
+    --bs-btn-focus-shadow-rgb: 60, 153, 110;
     --bs-btn-active-color: #fff;
     --bs-btn-disabled-color: #fff;
 }
 
-.btn-learn{
+.btn-learn {
     --bs-btn-color: var(--secondary);
-    --bs-btn-bg: #1A1A1A;
+    --bs-btn-bg: #1a1a1a;
     --bs-btn-border-color: #f8f9fa;
     --bs-btn-hover-color: #000;
     --bs-btn-hover-bg: var(--primary);
-    --bs-btn-focus-shadow-rgb: 248,249,250;
+    --bs-btn-focus-shadow-rgb: 248, 249, 250;
     --bs-btn-active-bg: var(--light);
     --bs-btn-active-border-color: var(--light);
     --bs-gradient: none;
@@ -123,59 +129,59 @@ h5{
     display: flex;
     flex-wrap: wrap;
     margin-top: calc(-1 * var(--bs-gutter-y));
-    margin-right: calc(-.5 * var(--bs-gutter-x));
-    margin-left: calc(-.5 * var(--bs-gutter-x));
+    margin-right: calc(-0.5 * var(--bs-gutter-x));
+    margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 
-.step{
-        box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-        border-radius: 3%;
-        background: #fcfcfc;
-        padding: 40px;
+.step {
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    border-radius: 3%;
+    background: #fcfcfc;
+    padding: 40px;
 }
 
 /* Review */
 .review h3 {
     font-size: 20px;
     font-weight: bold;
-    color: #E8CA77;
-  }
-  
-  .review p {
+    color: #e8ca77;
+}
+
+.review p {
     line-height: 1.8;
     color: #333333;
-  }
-  
-  .review .stars span {
-    color: #FF8803;
-  }
-  
-  .review .stars .muted {
+}
+
+.review .stars span {
+    color: #ff8803;
+}
+
+.review .stars .muted {
     color: #ccc;
-  }
-  
-  .review .review-user img {
+}
+
+.review .review-user img {
     width: 70px;
     margin: 0 auto;
-  }
-  
-  /* Testimonial Carousel */
-  .testimonials-slider .swiper-pagination {
+}
+
+/* Testimonial Carousel */
+.testimonials-slider .swiper-pagination {
     margin-top: 20px;
     position: relative;
-  }
-  
-  .testimonials-slider .swiper-pagination .swiper-pagination-bullet {
+}
+
+.testimonials-slider .swiper-pagination .swiper-pagination-bullet {
     width: 12px;
     height: 12px;
     background-color: #fff;
     opacity: 1;
-    border: 1px solid rgb(135,100,62);
-  }
-  
-  .testimonials-slider .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: rgb(135,100,62);
-  }
+    border: 1px solid rgb(135, 100, 62);
+}
+
+.testimonials-slider .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: rgb(135, 100, 62);
+}
 
 .swiper-wrapper {
     position: relative;
@@ -198,19 +204,18 @@ h5{
 }
 
 .jumbo {
-    background: #1A1A1A;
+    background: #1a1a1a;
 }
 
-.jumbo-text{
-    font-family: 'Poppins' ;
-    color: #FFFFFF;
+.jumbo-text {
+    font-family: "Poppins";
+    color: #ffffff;
     font-size: 14px;
 }
 
-footer{
-    background: #1A1A1A;
+footer {
+    background: #1a1a1a;
 }
-
 
 /*****/
 .my-order-container {
@@ -220,8 +225,8 @@ footer{
     min-height: 100vh;
     align-items: center;
     flex-direction: column;
-  }
-  .my-order-my-order {
+}
+.my-order-my-order {
     width: 100%;
     height: 1315px;
     display: flex;
@@ -230,8 +235,8 @@ footer{
     align-items: flex-start;
     flex-shrink: 0;
     background-color: rgba(238, 238, 238, 1);
-  }
-  .my-order-text {
+}
+.my-order-text {
     top: 118px;
     left: 551px;
     color: rgba(231, 177, 10, 1);
@@ -245,8 +250,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-frame26 {
+}
+.my-order-frame26 {
     top: 226px;
     left: 156px;
     width: 1200px;
@@ -258,15 +263,15 @@ footer{
     flex-shrink: 0;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 1);
-  }
-  .my-order-rectangle22 {
+}
+.my-order-rectangle22 {
     top: 0px;
     left: 1px;
     width: 1199px;
     height: 63px;
     position: absolute;
-  }
-  .my-order-group47 {
+}
+.my-order-group47 {
     top: 23px;
     left: 63px;
     width: 1075px;
@@ -275,8 +280,8 @@ footer{
     position: absolute;
     align-items: flex-start;
     flex-shrink: 1;
-  }
-  .my-order-text02 {
+}
+.my-order-text02 {
     color: rgba(0, 0, 0, 1);
     height: auto;
     position: absolute;
@@ -288,8 +293,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text04 {
+}
+.my-order-text04 {
     left: 175px;
     color: rgba(0, 0, 0, 1);
     height: auto;
@@ -302,8 +307,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text06 {
+}
+.my-order-text06 {
     left: 400px;
     color: rgba(0, 0, 0, 1);
     height: auto;
@@ -316,8 +321,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text08 {
+}
+.my-order-text08 {
     left: 684px;
     color: rgba(0, 0, 0, 1);
     height: auto;
@@ -330,8 +335,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text10 {
+}
+.my-order-text10 {
     left: 995px;
     color: rgba(0, 0, 0, 1);
     height: auto;
@@ -344,8 +349,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text12 {
+}
+.my-order-text12 {
     top: 94px;
     left: 28px;
     color: rgba(0, 0, 0, 1);
@@ -359,8 +364,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text14 {
+}
+.my-order-text14 {
     top: 94px;
     left: 213px;
     color: rgba(0, 0, 0, 1);
@@ -375,8 +380,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text16 {
+}
+.my-order-text16 {
     top: 94px;
     left: 463px;
     color: rgba(0, 0, 0, 1);
@@ -391,8 +396,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-group46 {
+}
+.my-order-group46 {
     top: 81px;
     left: 1017px;
     width: 161px;
@@ -402,8 +407,8 @@ footer{
     align-items: flex-start;
     flex-shrink: 1;
     background-color: rgba(0, 174, 17, 1);
-  }
-  .my-order-text18 {
+}
+.my-order-text18 {
     top: 13px;
     left: 14px;
     color: rgba(255, 255, 255, 1);
@@ -418,8 +423,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-group45 {
+}
+.my-order-group45 {
     top: 81px;
     left: 747px;
     width: 161px;
@@ -429,8 +434,8 @@ footer{
     align-items: flex-start;
     flex-shrink: 1;
     background-color: rgba(231, 177, 10, 1);
-  }
-  .my-order-text20 {
+}
+.my-order-text20 {
     top: 13px;
     left: 29px;
     color: rgba(255, 255, 255, 1);
@@ -444,8 +449,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text22 {
+}
+.my-order-text22 {
     top: 163px;
     left: 28px;
     color: rgba(0, 0, 0, 1);
@@ -459,8 +464,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text24 {
+}
+.my-order-text24 {
     top: 163px;
     left: 213px;
     color: rgba(0, 0, 0, 1);
@@ -475,8 +480,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text26 {
+}
+.my-order-text26 {
     top: 163px;
     left: 463px;
     color: rgba(0, 0, 0, 1);
@@ -491,8 +496,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-group48 {
+}
+.my-order-group48 {
     top: 150px;
     left: 1017px;
     width: 161px;
@@ -502,8 +507,8 @@ footer{
     align-items: flex-start;
     flex-shrink: 1;
     background-color: rgba(134, 134, 134, 1);
-  }
-  .my-order-text28 {
+}
+.my-order-text28 {
     top: 13px;
     left: 14px;
     color: rgba(255, 255, 255, 1);
@@ -518,8 +523,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-group49 {
+}
+.my-order-group49 {
     top: 150px;
     left: 747px;
     width: 161px;
@@ -529,8 +534,8 @@ footer{
     align-items: flex-start;
     flex-shrink: 1;
     background-color: rgba(231, 177, 10, 1);
-  }
-  .my-order-text30 {
+}
+.my-order-text30 {
     top: 13px;
     left: 29px;
     color: rgba(255, 255, 255, 1);
@@ -544,8 +549,8 @@ footer{
     line-height: 20px;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-frame261 {
+}
+.my-order-frame261 {
     top: 834px;
     left: -1px;
     width: 1513px;
@@ -556,8 +561,8 @@ footer{
     align-items: flex-start;
     flex-shrink: 0;
     background-color: rgba(25, 25, 25, 1);
-  }
-  .my-order-text32 {
+}
+.my-order-text32 {
     top: 241px;
     left: 1039px;
     color: rgba(232, 202, 119, 1);
@@ -572,8 +577,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text34 {
+}
+.my-order-text34 {
     top: 43px;
     left: 142px;
     color: rgba(232, 202, 119, 1);
@@ -588,8 +593,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-group12 {
+}
+.my-order-group12 {
     top: 321px;
     left: 1051.0806884765625px;
     width: 321.9193115234375px;
@@ -598,15 +603,15 @@ footer{
     position: absolute;
     align-items: flex-start;
     flex-shrink: 1;
-  }
-  .my-order-vector {
+}
+.my-order-vector {
     top: 0px;
     left: 0px;
     width: 39px;
     height: 30px;
     position: absolute;
-  }
-  .my-order-text36 {
+}
+.my-order-text36 {
     left: 50.919315338134766px;
     color: rgba(255, 255, 255, 1);
     height: auto;
@@ -619,8 +624,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-group13 {
+}
+.my-order-group13 {
     top: 371px;
     left: 1050.92724609375px;
     width: 266.0727233886719px;
@@ -629,8 +634,8 @@ footer{
     position: absolute;
     align-items: flex-start;
     flex-shrink: 1;
-  }
-  .my-order-text38 {
+}
+.my-order-text38 {
     top: 2px;
     left: 47.07273483276367px;
     color: rgba(255, 255, 255, 1);
@@ -645,15 +650,15 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-vector1 {
+}
+.my-order-vector1 {
     top: 0px;
     left: 0px;
     width: 39px;
     height: 35px;
     position: absolute;
-  }
-  .my-order-text40 {
+}
+.my-order-text40 {
     top: 48px;
     left: 1039px;
     color: rgba(232, 202, 119, 1);
@@ -668,8 +673,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text42 {
+}
+.my-order-text42 {
     top: 122px;
     left: 142px;
     color: rgba(255, 255, 255, 1);
@@ -684,8 +689,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-group3 {
+}
+.my-order-group3 {
     top: 326px;
     left: 142px;
     width: 229px;
@@ -694,8 +699,8 @@ footer{
     position: absolute;
     align-items: flex-start;
     flex-shrink: 1;
-  }
-  .my-order-text44 {
+}
+.my-order-text44 {
     top: 5px;
     left: 26px;
     color: rgba(232, 202, 119, 1);
@@ -709,29 +714,29 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-vector2 {
+}
+.my-order-vector2 {
     top: 131px;
     left: 1040.1219482421875px;
     width: 63px;
     height: 63px;
     position: absolute;
-  }
-  .my-order-vector3 {
+}
+.my-order-vector3 {
     top: 131px;
     left: 1133.1837158203125px;
     width: 63px;
     height: 63px;
     position: absolute;
-  }
-  .my-order-teenyiconsinstagramsolid {
+}
+.my-order-teenyiconsinstagramsolid {
     top: 131px;
     left: 1225px;
     width: 63px;
     height: 63px;
     position: absolute;
-  }
-  .my-order-text46 {
+}
+.my-order-text46 {
     top: 438px;
     left: 609px;
     color: rgba(255, 255, 255, 1);
@@ -746,8 +751,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-group44 {
+}
+.my-order-group44 {
     top: 0px;
     left: 0px;
     width: 1512px;
@@ -757,8 +762,8 @@ footer{
     align-items: flex-start;
     flex-shrink: 1;
     background-color: rgba(25, 25, 25, 1);
-  }
-  .my-order-text48 {
+}
+.my-order-text48 {
     top: 24px;
     left: 366px;
     color: rgba(232, 202, 119, 1);
@@ -773,8 +778,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text50 {
+}
+.my-order-text50 {
     top: 24px;
     left: 486px;
     color: rgba(232, 202, 119, 1);
@@ -789,8 +794,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text52 {
+}
+.my-order-text52 {
     top: 27px;
     left: 608px;
     color: rgba(232, 202, 119, 1);
@@ -805,8 +810,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text54 {
+}
+.my-order-text54 {
     top: 27px;
     left: 729px;
     color: rgba(232, 202, 119, 1);
@@ -821,8 +826,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text56 {
+}
+.my-order-text56 {
     top: 27px;
     left: 994px;
     color: rgba(232, 202, 119, 1);
@@ -837,8 +842,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text58 {
+}
+.my-order-text58 {
     top: 27px;
     left: 862px;
     color: rgba(232, 202, 119, 1);
@@ -852,8 +857,8 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-text60 {
+}
+.my-order-text60 {
     top: 32px;
     left: 1386px;
     color: rgba(232, 202, 119, 1);
@@ -868,22 +873,22 @@ footer{
     line-height: normal;
     font-stretch: normal;
     text-decoration: none;
-  }
-  .my-order-polygon1 {
+}
+.my-order-polygon1 {
     top: 47px;
     left: 1473px;
     width: 11px;
     height: 10px;
     position: absolute;
-  }
-  .my-order-laukpau-k11 {
+}
+.my-order-laukpau-k11 {
     top: 2px;
     left: 31px;
     width: 148px;
     height: 80px;
     position: absolute;
-  }
-  .my-order-group35 {
+}
+.my-order-group35 {
     top: 29.325393676757812px;
     left: 1300.949951171875px;
     width: 73.49989318847656px;
@@ -892,15 +897,15 @@ footer{
     position: absolute;
     align-items: flex-start;
     flex-shrink: 1;
-  }
-  .my-order-vector4 {
+}
+.my-order-vector4 {
     top: 0px;
     left: 0px;
     width: 26px;
     height: 24px;
     position: absolute;
-  }
-  .my-order-group {
+}
+.my-order-group {
     top: 0.5796777606010437px;
     left: 47.66715621948242px;
     width: 25.832740783691406px;
@@ -909,19 +914,18 @@ footer{
     position: absolute;
     align-items: flex-start;
     flex-shrink: 1;
-  }
-  .my-order-vector5 {
+}
+.my-order-vector5 {
     top: 4.321159362792969px;
     left: 8.219682693481445px;
     width: 9px;
     height: 9px;
     position: absolute;
-  }
-  .my-order-vector6 {
+}
+.my-order-vector6 {
     top: 0px;
     left: 0px;
     width: 26px;
     height: 24px;
     position: absolute;
-  }
-  
+}

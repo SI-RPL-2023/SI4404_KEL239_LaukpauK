@@ -31,11 +31,11 @@
             @auth
             <div class="col-4">
                 <div class="nav-item dropdown">
-                    <a class="navbar-brand" href="{{ route('cart') }}">
+                    <a class="navbar-brand" href="">
                         <img src="{{ asset('assets/user/images/landingPage/cart.png') }}" alt="Cart Icon" width="" height="25">
                     </a>
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('storage/'.auth()->user()->foto_user) }}" class="rounded-circle" alt="Foto User" width="" height="40">
+                    <button class="imgratio btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{ asset('storage/'.auth()->user()->foto_user) }}" class="rounded-circle ratio ratio-1x1" alt="Foto User" width="" height="40">
                     </button>
                     <ul class="dropdown-menu">
                         <li><a href="{{ route('profile', ['id' => auth()->user()->id]) }}" class="dropdown-item">Profile</a></li>

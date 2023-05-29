@@ -209,3 +209,8 @@ footer {
     height: auto;
     width: 100%;
 }
+
+.imgratio {
+    width: 40%;
+    aspect-ratio: auto 1 / 1;
+}
