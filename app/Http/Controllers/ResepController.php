@@ -35,7 +35,7 @@ class ResepController extends Controller
     }
 
     public function showResepAdmin() {
-        $recipes = Recipe::where('user_id', auth()->user()->id)->with('users')->get();
+        $recipes = Recipe::with('users')->get();
 
         return view('admin.listResep', compact('recipes'));
     }
