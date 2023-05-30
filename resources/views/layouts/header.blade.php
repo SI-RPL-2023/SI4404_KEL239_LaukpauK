@@ -12,6 +12,7 @@
                 crossorigin="anonymous"></script>
                 <!-- Option 1: Include in HTML -->
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> 
+            <link rel="icon" type="image/x-icon" href="{{ asset('assets/user/images/landingPage/logo.ico') }}">
             
             @yield('css')
             
