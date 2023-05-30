@@ -19,7 +19,7 @@
               <div class="row product-list dev">
                   @foreach ($articles as $article)
                     <div class="col-sm-6 col-md-4 product-item animation-element slide-top-right">
-                        <div class="product-container">
+                        <div class="product-container mb-5">
 
                             <div class="row">
                                 <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="{{ asset('storage/'.$article->gambar_artikel) }}" width="373" height="200"></div>
@@ -39,8 +39,10 @@
       </section>
   </section>
 
-  {{-- FOOTER --}}
-  @include('layouts.footer')
+    <div class="" style="position: sticky; top:100%;">
+        {{-- FOOTER --}}
+        @include('layouts.footer')
+    </div>
 @endsection
 
 @section('js')

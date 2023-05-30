@@ -40,7 +40,7 @@
                 <div class="row" style="margin-top: 25px;">
                     @foreach ($products as $product)
                         <div class="col-3">
-                            <div class="card">
+                            <div class="card mb-4">
                                 <img src="{{ asset('storage/'.$product->gambar_produk) }}" class="card-img-top center" style="margin:10px 10px 0px 10px;width: auto;height: 228px;">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $product->nama_produk }}</h5>
@@ -71,8 +71,10 @@
         </div>
     </div> --}}
 
-    <!--FOOTER-->
-    @include('layouts/footer')
+    <div class="" style="position: sticky; top:100%;">
+        {{-- FOOTER --}}
+        @include('layouts.footer')
+    </div>
     
 @endsection
 

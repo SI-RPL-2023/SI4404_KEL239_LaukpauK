@@ -29,9 +29,12 @@
       <section>
           <div class="container">
               <div class="row product-list dev">
-                  @foreach ($recipes as $recipe)
+                @if ($recipes->count() === 0)
+                    <h5 style="color: black;">Yah belum ada resepnya nih :(</h5>
+                @else
+                    @foreach ($recipes as $recipe)
                     <div class="col-sm-6 col-md-4 product-item animation-element slide-top-right">
-                        <div class="product-container">
+                        <div class="product-container mb-5">
                             
                             <div class="row">
                                 <div class="col-md-12"><img class="fit-cover" style="height: 200px;width: 371px;" src="{{ asset('storage/'.$recipe->gambar_resep) }}" width="373" height="200"></div>
@@ -45,14 +48,17 @@
                             
                         </div>
                     </div>
-                @endforeach
+                    @endforeach
+                @endif
               </div>
           </div>
       </section>
   </section>
     
-  {{-- FOOTER --}}
-  @include('layouts.footer')
+    <div class="" style="position: sticky; top:100%;">
+        {{-- FOOTER --}}
+        @include('layouts.footer')
+    </div>
 @endsection
 
 @section('js')
