@@ -23,7 +23,7 @@ class ArticleController extends Controller
     }
     
     public function showArtikelAdmin() {
-        $articles = Article::where('user_id', auth()->user()->id)->with('users')->get();
+        $articles = Article::where('id_user', auth()->user()->id)->with('users')->get();
 
         return view('admin.listArtikel', compact('articles'));
     }
@@ -58,11 +58,11 @@ class ArticleController extends Controller
                 $validated_data['gambar_artikel'] = $img;
         }
             
-        $validated_data['user_id'] = auth()->user()->id;
+        $validated_data['id_user'] = auth()->user()->id;
 
         Article::create($validated_data);
 
-        return redirect('admin.listArtikel')->with('saveSuccess', 'Artikel berhasil dibuat!');
+        return redirect('admin/listArtikel')->with('saveSuccess', 'Artikel berhasil dibuat!');
     }
 
     public function editArticleView(Request $request) {

@@ -35,7 +35,7 @@ class ResepController extends Controller
     }
 
     public function showResepAdmin() {
-        $recipes = Recipe::with('users')->get();
+        $recipes = Recipe::where('id_user', auth()->user()->id)->with('users')->get();
 
         return view('admin.listResep', compact('recipes'));
     }
@@ -69,7 +69,7 @@ class ResepController extends Controller
                 $validated_data['gambar_resep'] = $img;
         }
 
-        $validated_data['user_id'] = auth()->user()->id;
+        $validated_data['id_user'] = auth()->user()->id;
 
         Recipe::create($validated_data);
 

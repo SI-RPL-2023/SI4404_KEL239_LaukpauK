@@ -11,7 +11,7 @@ class Recipe extends Model
     use HasFactory, Sluggable;
 
     protected $fillable = [
-        'user_id',
+        'id_user',
         'judul',
         'slug',
         'kategori',
@@ -29,6 +29,6 @@ class Recipe extends Model
     }
 
     public function users() {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'id_user', 'id');
     }
 }
