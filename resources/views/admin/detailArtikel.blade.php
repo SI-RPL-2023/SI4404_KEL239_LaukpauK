@@ -39,11 +39,15 @@
                                 
                                 <h6 class="text-dark float-end m-0 fw-bold" style="margin-left: 15px;padding-left: 12px;font-size: 22px;">{{ \Carbon\Carbon::parse($article->created_at)->format('j F, Y') }}</h6>
                                 
-                                <img class="w-100 h-100 fit-cover" src="{{ asset('storage/'.$article->gambar_artikel) }}" width="1248" height="713" style="margin-top: 16px;">
+                                <center>   
+                                    <div class="imgfix mb-3" style="height:60vh;">
+                                        <img class="w-100 h-100 fit-cover" src="{{ asset('storage/'.$article->gambar_artikel) }}" width="1248" height="713" style="margin-top: 16px;">
+                                    </div>
+                                </center>
                                     <div class="mb-3"></div>
-                                <p class="text-dark m-0 fw-bold mt-sm-4" style="margin-left: 15px;padding-left: 12px;font-size: 22px;padding-bottom: 0px;">
-                                        {!! $article->isi_artikel !!}
-                                </p>
+                                <div class="container card mt-5 bg-transparent" style="">
+                                    <h6 class="text-dark m-0 fw-bold mt-sm-3 mb-3" style="margin-left: 15px;padding-left: 12px;font-size: 22px;padding-bottom: 0px;">{!! $article->isi_artikel !!}</h6>
+                                </div>
                             </form>
                         </div>
                     </div>

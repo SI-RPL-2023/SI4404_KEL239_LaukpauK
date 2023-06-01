@@ -218,3 +218,9 @@ footer {
     width: 40%;
     aspect-ratio: auto 1 / 1;
 }
+
+.imgfix {
+    justify-content: center;
+    height: 50%;
+    width: 50%;
+}
