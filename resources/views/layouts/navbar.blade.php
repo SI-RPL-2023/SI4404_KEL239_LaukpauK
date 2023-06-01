@@ -31,7 +31,7 @@
             @auth
             <div class="col-4">
                 <div class="nav-item dropdown">
-                    <a class="navbar-brand" href="">
+                    <a class="navbar-brand" href="{{ url('cart') }}">
                         <img src="{{ asset('assets/user/images/landingPage/cart.png') }}" alt="Cart Icon" width="" height="25">
                     </a>
                     <button class="imgratio btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
