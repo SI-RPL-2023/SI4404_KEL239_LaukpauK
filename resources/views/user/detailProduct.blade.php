@@ -27,8 +27,8 @@
         </div>
     </div>
     
-    <div class="d-flex mb-5" style="">
-        <div class="card" style="width: 597px; height: 506px; margin-left: 100px; margin-top: 44px;">
+    <div class="d-flex mb-5" style="margin-left: 120px;">
+        <div class="card" style="width: 450px; height: 100%; margin-left: 100px; margin-top: 40px;">
             <img src="{{ asset('storage/'.$product->gambar_produk) }}">
         </div>
         <div>
@@ -49,10 +49,10 @@
                     <button type="submit" class="btn btn-warning fw-bold" style="width: 190px; margin-left: 26px;">Add to Cart</button>  
                 </div>
             </form>
-            <h2 class="fw-bold" style="margin-left: 74px; margin-top: 14px; font-size: 20px; ">Share On</h2>
+            
         </div>
     </div>
-    <div style="margin-bottom:250px">
+    <div style="margin-bottom:100px">
     </div>"
 
     @include('layouts.footer')
