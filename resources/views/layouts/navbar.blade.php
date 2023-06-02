@@ -16,13 +16,13 @@
                 <div class="navbar-nav ms-auto mx-lg-auto py-0">
                     <a href="{{ route('landingPage') }}" class="nav-item nav-link {{ set_active(['/', 'landingPage']) }}"><b>Home</b></a>
                     @auth
-                        <a href="" class="nav-item nav-link"><b>Articles</b></a>
-                        <a href="" class="nav-item nav-link"><b>Recipe</b></a>
+                        <a href="{{ route('artikel') }}" class="nav-item nav-link {{ set_active('artikel') }}"><b>Articles</b></a>
+                        <a href="{{ route('resep') }}" class="nav-item nav-link {{ set_active('resep') }}"><b>Recipe</b></a>
                     @endauth
                     <a href="{{ route('listProductView') }}" class="nav-item nav-link {{ set_active(['listProduct', 'listProductView']) }}"><b>Products</b></a>
                     <a href="{{ route('contactUs') }}" class="nav-item nav-link {{ set_active('contactUs') }}"><b>Contact</b></a>
                     @auth
-                        <a href="" class="nav-item nav-link"><b>Orders</b></a>
+                        <a href="{{ route('orders') }}" class="nav-item nav-link {{ set_active('orders') }}"><b>Orders</b></a>
                     @endauth
                 </div>
             </div>
@@ -31,11 +31,11 @@
             @auth
             <div class="col-4">
                 <div class="nav-item dropdown">
-                    <a class="navbar-brand" href="">
+                    <a class="navbar-brand" href="{{ url('cart') }}">
                         <img src="{{ asset('assets/user/images/landingPage/cart.png') }}" alt="Cart Icon" width="" height="25">
                     </a>
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('storage/'.auth()->user()->foto_user) }}" class="rounded-circle" alt="Foto User" width="" height="40">
+                    <button class="imgratio btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{ asset('storage/'.auth()->user()->foto_user) }}" class="rounded-circle ratio ratio-1x1" alt="Foto User" width="" height="40">
                     </button>
                     <ul class="dropdown-menu">
                         <li><a href="{{ route('profile', ['id' => auth()->user()->id]) }}" class="dropdown-item">Profile</a></li>

@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
+body {
+    min-height: 100vh;
+}
+
 :root {
     --primary: #e7b10a;
     --secondary: #e8ca77;
@@ -208,4 +212,15 @@ footer {
     display: block;
     height: auto;
     width: 100%;
+}
+
+.imgratio {
+    width: 40%;
+    aspect-ratio: auto 1 / 1;
+}
+
+.imgfix {
+    justify-content: center;
+    height: 50%;
+    width: 50%;
 }

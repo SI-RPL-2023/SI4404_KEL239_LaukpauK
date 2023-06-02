@@ -1,7 +1,7 @@
 @extends('layouts.header')
 
 @section('title')
-    List Product
+    List Products
 @endsection
 
 @section('css')
@@ -82,7 +82,7 @@
                                             <td style="text-align: center;">
                                                 <picture><img style="text-align: center;width: 133px;" width="116" height="96" src="{{ asset('storage/'.$product->gambar_produk) }}"></picture>
                                             </td>
-                                            <td class="text-dark" style="text-align: center;">{{ 'Rp.'.$product->harga }}</td>
+                                            <td class="text-dark" style="text-align: center;">@currency($product->harga)</td>
                                             <td class="text-dark" style="text-align: center;">{{ $product->stock }}</td>
                                             <td style="text-align: center;">
                                                 <a class="btn btn-primary" style="background: #e7b10a;margin-bottom: 12px;width: 112.3312px;" href="{{ route('editProduct', ['id' => $product->id]) }}">
@@ -108,11 +108,7 @@
                 </div>
             </div>
         </div>
-        <footer class="bg-white sticky-footer">
-            <div class="container my-auto">
-                <div class="text-center my-auto copyright"><span>Copyright © Brand 2023</span></div>
-            </div>
-        </footer>
+        @include('layouts.footer-admin')
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
 </div>
 @endsection

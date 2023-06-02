@@ -73,9 +73,9 @@ class ProductController extends Controller
         return view('user/listProduct', compact('products'));
     }
 
-    public function detailProductView() {
-        // $products = Product::all();
+    public function detailProductView(Request $request) {
+        $product = Product::find($request->id);
 
-        return view('user/detailProduct');
+        return view('user.detailProduct', compact('product'));
     }
 }

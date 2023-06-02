@@ -20,13 +20,13 @@
         <div id="wrapper">
 
             {{-- SIDEBAR --}}
-            @include('layouts/sidebar-admin')
+            @include('layouts.sidebar-admin')
             
             <div class="d-flex flex-column" id="content-wrapper">
                 <div id="content">
                     
                     {{-- NAVBAR --}}
-                    @include('layouts/navbar-admin')
+                    @include('layouts.navbar-admin')
 
                     <section></section>
                     
@@ -57,6 +57,7 @@
                                     <select class="form-select" style="height: 44px;font-size: 18px;width: 100%;margin-top: 11px;margin-bottom: 32px;padding-top: 0px;padding-bottom: 0px;border-color: rgb(133, 135, 150);color: var(--bs-black);" name="kategori" required>
                                         <option value="Sayur">Sayur</option>
                                         <option value="Daging">Daging</option>
+                                        <option value="Jasa">Jasa</option>
                                     </select>
 
                                 <button class="btn btn-primary link-light d-block btn-user w-100" type="submit" style="background: #e7b10a;font-weight: bold;font-size: 18.8px;">Submit</button>
@@ -68,11 +69,7 @@
                         <div class="card-body p-0"></div>
                     </div>
                 </div>
-                <footer class="bg-white sticky-footer">
-                    <div class="container my-auto">
-                        <div class="text-center my-auto copyright"><span>Copyright © Brand 2023</span></div>
-                    </div>
-                </footer>
+                @include('layouts.footer-admin')
             </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
 @endsection

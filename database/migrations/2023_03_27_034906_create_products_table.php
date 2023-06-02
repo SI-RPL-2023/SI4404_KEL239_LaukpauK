@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('kategori');
             $table->integer('stock');
             $table->integer('harga');
-            $table->string('review');
+            $table->string('review')->nullable(true);
             $table->string('deskripsi');
             $table->timestamps();
         });
